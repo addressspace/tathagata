@@ -4,59 +4,233 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            transition: background-color 0.5s;
+            scroll-behavior: smooth;
+        }
+        .header, .footer {
+            position: fixed;
+            width: 80%;
+            left: 10%;
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: top 0.3s, bottom 0.3s;
+        }
+        .header {
+            top: 10px;
+        }
+        .footer {
+            bottom: 10px;
+        }
+        .header nav, .footer nav {
+            display: flex;
+            justify-content: space-around;
+        }
+        .header nav a, .footer nav a {
+            text-decoration: none;
+            color: black;
+            padding: 10px;
+        }
+        .header nav a.active, .footer nav a.active {
+            border-bottom: 2px solid red;
+        }
+        section {
+            height: 100vh;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: background-color 0.5s;
+        }
+        #personal-info {
+            display: flex;
+            align-items: center;
+        }
+        #personal-info img {
+            border-radius: 50%;
+            border: 5px solid;
+            border-color: transparent;
+            transition: border-color 0.5s;
+            margin-left: 20px;
+        }
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            padding: 20px;
+            box-sizing: border-box;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .mobile-nav .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+        }
+        .mobile-nav a {
+            display: block;
+            margin: 20px 0;
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+        }
+        .menu-btn {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .header nav, .footer nav {
+                display: none;
+            }
+            .menu-btn {
+                display: block;
+            }
+        }
+        .scrollable-container {
+            height: 100%;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
-    <header id="header">
+    <header class="header">
+        <div class="menu-btn" onclick="toggleMobileNav()">☰</div>
         <nav>
-            <ul>
-                <li><a href="#personal-info">Personal Information</a></li>
-                <li><a href="#research-interest">Research Interest</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#coursework">Coursework</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-            </ul>
+            <a href="#personal-info" class="nav-link">Personal Information</a>
+            <a href="#research-interest" class="nav-link">Research Interest</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#course-work" class="nav-link">Course Work</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
         </nav>
     </header>
-
-    <main>
+    <nav class="mobile-nav">
+        <div class="close-btn" onclick="toggleMobileNav()">✖</div>
+        <a href="#personal-info" class="nav-link" onclick="toggleMobileNav()">Personal Information</a>
+        <a href="#research-interest" class="nav-link" onclick="toggleMobileNav()">Research Interest</a>
+        <a href="#education" class="nav-link" onclick="toggleMobileNav()">Education</a>
+        <a href="#course-work" class="nav-link" onclick="toggleMobileNav()">Course Work</a>
+        <a href="#skills" class="nav-link" onclick="toggleMobileNav()">Skills</a>
+        <a href="#projects" class="nav-link" onclick="toggleMobileNav()">Projects</a>
+    </nav>
+    <footer class="footer">
+        <nav>
+            <a href="#personal-info" class="nav-link">Personal Information</a>
+            <a href="#research-interest" class="nav-link">Research Interest</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#course-work" class="nav-link">Course Work</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+        </nav>
+    </footer>
+    <div class="scrollable-container">
         <section id="personal-info">
-            <h1>Personal Information</h1>
-            <img src="MSC22403.png" alt="Your Photo" class="profile-pic">
-            <p>Your personal information goes here.</p>
+            <div>
+                <h1>Personal Information</h1>
+                <p>Details about yourself.</p>
+            </div>
+            <img src="https://via.placeholder.com/150" alt="Profile Picture" id="profile-pic">
         </section>
-
         <section id="research-interest">
             <h1>Research Interest</h1>
-            <p>Your research interests go here.</p>
+            <p>Details about your research interests.</p>
         </section>
-
         <section id="education">
             <h1>Education</h1>
-            <p>Your education details go here.</p>
+            <p>Details about your education.</p>
         </section>
-
-        <section id="coursework">
-            <h1>Coursework</h1>
-            <p>Your coursework details go here.</p>
+        <section id="course-work">
+            <h1>Course Work</h1>
+            <p>Details about your course work.</p>
         </section>
-
         <section id="skills">
             <h1>Skills</h1>
-            <p>Your skills go here.</p>
+            <p>Details about your skills.</p>
         </section>
-
         <section id="projects">
             <h1>Projects</h1>
-            <p>Your projects go here.</p>
+            <p>Details about your projects.</p>
         </section>
-    </main>
+    </div>
 
-    <footer id="footer">
-        <p>© 2024 Your Name. All rights reserved.</p>
-    </footer>
+    <script>
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-link");
+        const profilePic = document.getElementById('profile-pic');
+        const header = document.querySelector('.header');
+        const footer = document.querySelector('.footer');
+        const scrollableContainer = document.querySelector('.scrollable-container');
+        let lastScrollTop = 0;
 
-    <script src="script.js"></script>
+        scrollableContainer.addEventListener('scroll', () => {
+            let scrollTop = scrollableContainer.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                header.style.top = '-100px';
+                footer.style.bottom = '10px';
+            } else {
+                // Scrolling up
+                header.style.top = '10px';
+                footer.style.bottom = '-100px';
+            }
+            lastScrollTop = scrollTop;
+
+            // Highlight sections in nav
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    document.querySelector(`a[href="#${section.id}"]`).classList.add('active');
+                }
+            });
+
+            // Change background color on scroll
+            document.body.style.backgroundColor = `rgb(${(scrollTop % 255)}, ${(scrollTop % 255)}, ${(scrollTop % 255)})`;
+
+            // Change border color of profile picture
+            profilePic.style.borderColor = `rgb(${(scrollTop % 255)}, ${(scrollTop % 255)}, ${(scrollTop % 255)})`;
+        });
+
+        function toggleMobileNav() {
+            document.querySelector('.mobile-nav').classList.toggle('hidden');
+        }
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.querySelector(link.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                if (window.innerWidth <= 768) {
+                    toggleMobileNav();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
