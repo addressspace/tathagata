@@ -1,0 +1,114 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .App {
+    display: flex;
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    width: 200px; /* Adjust width as needed */
+    height: 100vh; /* Full viewport height */
+    background-color: #f4f4f4;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    overflow-y: auto; /* Enable scrollbar if content overflows */
+  }
+  
+  .sidebar nav {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .sidebar nav ul {
+    list-style-type: none;
+  }
+  
+  .sidebar nav ul li {
+    margin: 10px 0;
+  }
+  
+  .sidebar nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Main Content Styles */
+  .main-content {
+    flex: 1; /* Main content takes remaining space */
+    padding: 20px;
+  }
+  
+  /* Existing CSS styles... */
+  
+  header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  nav ul {
+    text-align: center; /* Move to header or adjust as needed */
+  }
+  
+  nav ul li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: white;
+    /* Style as needed */
+  }
+  
+  section {
+    padding: 60px 20px;
+    margin-top: 60px;
+  }
+  
+  #hero {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  #hero h1 {
+    font-size: 3em;
+  }
+  
+  #projects .project, #skills ul {
+    margin: 20px 0;
+  }
+  
+  #skills ul {
+    padding: 0;
+  }
+  
+  #skills ul li {
+    background-color: #eee;
+    margin: 5px 0;
+    padding: 10px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  form label {
+    margin-top: 10px;
+  }
+  
