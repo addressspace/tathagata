@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="/css/reseach-interest.css">
 <link rel="stylesheet" href="/css/education.css">
 <link rel="stylesheet" href="/css/research.css">
+<link rel="stylesheet" href="/css/skill.css">
+<link rel="stylesheet" href="/css/coursework.css">
+<link rel="stylesheet" href="/css/contact.css">
 <style>
     
 </style>
@@ -23,6 +26,7 @@
         <a href="#course-work">Course Work</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#contact">Contacts</a>
     </nav>
 </header>
 
@@ -35,6 +39,7 @@
         <a href="#course-work">Course Work</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#contact">Contacts</a>
     </nav>
 </div>
 
@@ -45,25 +50,18 @@
         <p>Your personal information goes here.</p>
     </div> -->
 
-    <div class="profile-card profile-1a" id="profile-1b">
-        <h2 class="profile-heading">Personal Information</h2>
-        <div class="card-content">
-            <div class="left-content">
-                <p><strong>Name:</strong> John Doe</p>
-                <p><strong>Age:</strong> 30</p>
-                <p><strong>Gender:</strong> Male</p>
-                <p><strong>Living City:</strong> New York</p>
-            </div>
-            <div class="right-content">
-                <img src="MSC22403.png" alt="Profile Image">
-            </div>
+    <div class="info-tile">
+        <div class="image-container">
+            <img src="MSC22403.png" alt="Profile Picture">
+        </div>
+        <div class="details">
+            <h2>Tathagata Das</h2>
+            <p>MSc Student</p>
+            <p>Email: tathagatadasworkspace@gmail.com</p>
+            <p>Phone: +91 88xxx 25xx8</p>
         </div>
     </div>
     
-
-    
-    
-
 </section>
 
 <section id="research-interest">
@@ -176,17 +174,77 @@
 </section>
 
 <section id="course-work">
-    <div>
+    <!-- <div>
         <h1>Course Work</h1>
         <p>Your course work details go here.</p>
+    </div> -->
+    <div class="coursework-tile">
+        <div class="coursework-heading">Coursework</div>
+        <div class="course-columns">
+            <div class="course-column">
+                <div class="course-subheading">Foundation Courses</div>
+                <div class="course-para">
+                    Principles of Digital Imaging, Digital Image Processing, Mathematical Methods in Physics, Statistical and Data Analysis Methods in Physical Sciences, Numerical Methods, Analogue Systems and Applications, Digital Systems and Applications, Wave and Optics, Statistical Mechanics, Condensed Matter Physics, English Communication.
+                </div>
+            </div>
+            <div class="course-column">
+                <div class="course-subheading">Research Oriented Courses</div>
+                <div class="course-para">
+                    Quantum Information Theory, Quantum Mechanics and Applications.
+                </div>
+            </div>
+        </div>
     </div>
+    
+    
 </section>
 
 <section id="skills">
-    <div>
+    <!-- <div>
         <h1>Skills</h1>
         <p>Your skills go here.</p>
+    </div> -->
+
+    <div class="skill-tile">
+        <h1 class="skill-heading">Skills</h1>
+        
+        <div class="section">
+            <div class="section-heading">Computational Skills</div>
+            <div class="skill-item">
+                <div class="skill-category">Programming Languages:</div>
+                <div class="skill-details">Python, C, MATLAB</div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-category">Libraries/Frameworks:</div>
+                <div class="skill-details">PyTorch, Flask, HTML, CSS</div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-category">Toolbox:</div>
+                <div class="skill-details">k-Wave MATLAB toolbox</div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-category">Web Development:</div>
+                <div class="skill-details">JavaScript, PHP</div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-category">Operating Systems:</div>
+                <div class="skill-details">Windows, Linux</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-heading">Instrumentation</div>
+            <div class="skill-item">
+                <div class="skill-category">Office Tools:</div>
+                <div class="skill-details">MS Word, MS PowerPoint, MS Excel</div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-category">Others:</div>
+                <div class="skill-details">HPC, Cloud Computing</div>
+            </div>
+        </div>
     </div>
+
 </section>
 
 <section id="projects">
@@ -222,8 +280,41 @@
     
 </section>
 
+
+
+
+
+
+
+<section id="contact">
+    <!-- <div>
+        <img src="your-image.jpg" alt="Your Image" width="200">
+        <h1>Personal Information</h1>
+        <p>Your personal information goes here.</p>
+    </div> -->
+
+    <div class="contact-tile">
+        <h2>Contact Me</h2>
+        <div class="contact-details">
+            <a href="https://www.linkedin.com/in/tathagatalinked" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="icon"> LinkedIn
+            </a>
+
+            <a href="https://github.com/addressspace" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="icon"> GitHub
+            </a>
+
+            <a href="mailto:tathagatadasworkspace@gmail.com">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="icon"> Email
+            </a>
+        </div>
+    </div>
+    
+</section>
+
+
 <footer>
-    <p>&copy; 2024 Your Name</p>
+    2024 Your Name
 </footer>
 
 <script src="javascript/reseach-interest.js"></script>

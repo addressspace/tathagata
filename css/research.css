@@ -4,13 +4,16 @@ body {
 }
 
 .research-experience-tile {
-    background-color: white;
+    font-family: Arial, sans-serif;
+    margin: 50px;
     padding: 20px;
-    margin: 20px;
+    border: 1px solid #ccc;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); /* Floating shadow effect */
+    position: relative;
+    z-index: 1;
     width: 70%;
-    margin: 20px auto; /* Center the tile */
 }
 
 .research-heading {
