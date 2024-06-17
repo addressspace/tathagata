@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.education-tile {
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    margin: 20px auto; /* Center the tile */
+}
+
+.education-heading {
+    text-align: left;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.education-item {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #333;
+}
+
+.education-item:last-child {
+    margin-bottom: 0;
+}
+
+.institution-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.institution {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.year {
+    font-size: 14px;
+    color: #777;
+}
+
+.course-details {
+    font-size: 14px;
+    color: #555;
+}
+
+.course {
+    display: block;
+    margin-bottom: 2px;
+}
+
+.cgpa,
+.percentage {
+    display: block;
+}

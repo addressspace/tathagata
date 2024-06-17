@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.research-experience-tile {
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    margin: 20px auto; /* Center the tile */
+}
+
+.research-heading {
+    text-align: left;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.project-item {
+    margin-bottom: 40px; /* Increase the gap between project details */
+    font-size: 16px;
+    color: #333;
+}
+
+.project-item:last-child {
+    margin-bottom: 0;
+}
+
+.project-name-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px; /* Reduce the gap between project name and supervisor */
+}
+
+.project-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.institution-details {
+    margin-bottom: 5px; /* Reduce gap between supervisor and experience details */
+}
+
+.institution {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.year {
+    font-size: 14px;
+    color: #777;
+    align-self: flex-start; /* Align year with project name */
+}
+
+.course-details {
+    font-size: 14px;
+    color: #555;
+}
+
+.course {
+    display: block;
+    margin-bottom: 2px;
+}
+
+.cgpa,
+.percentage {
+    display: block;
+}
