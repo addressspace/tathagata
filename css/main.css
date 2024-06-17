@@ -4,6 +4,7 @@ body, html {
     overflow: hidden;
     font-family: Arial, sans-serif;
     scroll-behavior: smooth;
+    background-color: black;
 }
 body {
     transition: background-color 1s ease;
@@ -15,19 +16,19 @@ header, footer {
     width: 90%;
     max-width: 1000px;
     background: white;
-    padding: 20px;
+    padding: 0px;
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
     z-index: 1000;
 }
 header {
-    top: 10%;
+    top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 footer {
-    bottom: 10%;
+    bottom: 10px;
 }
 nav {
     display: flex;

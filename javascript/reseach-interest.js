@@ -10,4 +10,4 @@ function createFireflies(num) {
     }
 }
 
-createFireflies(50); // Create 50 fireflies
+createFireflies(1); // Create 50 fireflies
