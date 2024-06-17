@@ -1,0 +1,54 @@
+.profile-card {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    width: 70%;
+    margin: 20px;
+}
+
+.profile-heading {
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.card-content {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Items on either side */
+    align-items: center; /* Center vertically */
+}
+
+.left-content {
+    flex: 1;
+    width: 50%;
+}
+
+.left-content p {
+    margin: 5px 0;
+}
+
+.left-content strong {
+    font-weight: bold;
+}
+
+.right-content {
+    flex-shrink: 0; /* Do not allow image to shrink */
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    left: 10px;
+}
+
+.right-content img {
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+    
+}

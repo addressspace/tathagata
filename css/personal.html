@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+/* Styling for the profile card */
+.profile-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust shadow as needed */
+    background-color: #f9f9f9;
+    width: 400px; /* Adjust width as needed */
+    margin: 20px; /* Adjust margin as needed */
+}
+
+/* Styling for the left content (text information) */
+.left-content {
+    flex: 1; /* Takes up remaining space */
+}
+
+.left-content p {
+    margin: 5px 0;
+}
+
+.left-content strong {
+    font-weight: bold;
+}
+
+/* Styling for the right content (profile image) */
+.right-content {
+    flex-shrink: 0; /* Do not allow image to shrink */
+    width: 100px; /* Adjust width as needed */
+    height: 100px; /* Adjust height as needed */
+    border-radius: 50%; /* Round border for circular shape */
+    overflow: hidden; /* Ensure image stays within circle */
+}
+
+.right-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="profile-card profile-1a" id="profile-1b">
+        <div class="left-content">
+            <p><strong>Name:</strong> John Doe</p>
+            <p><strong>Age:</strong> 30</p>
+            <p><strong>Gender:</strong> Male</p>
+            <p><strong>Living City:</strong> New York</p>
+        </div>
+        <div class="right-content">
+            <img src="profile-image.jpg" alt="Profile Image">
+        </div>
+    </div>
+    
+</body>
+</html>

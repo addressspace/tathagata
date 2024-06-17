@@ -4,117 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Personal Portfolio</title>
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/personal.css">
+<link rel="stylesheet" href="/css/reseach-interest.css">
 <style>
-    body, html {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        font-family: Arial, sans-serif;
-        scroll-behavior: smooth;
-    }
-    body {
-        transition: background-color 1s ease;
-    }
-    header, footer {
-        position: fixed;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90%;
-        max-width: 1000px;
-        background: white;
-        padding: 20px;
-        border-radius: 20px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.1);
-        z-index: 1000;
-    }
-    header {
-        top: 10%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    footer {
-        bottom: 10%;
-    }
-    nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    nav a {
-        margin: 0 10px;
-        text-decoration: none;
-        color: black;
-    }
-    nav a.active {
-        font-weight: bold;
-        color: darkblue;
-    }
-    section {
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: transform 1s ease;
-    }
-    #personal-info img {
-        border-radius: 50%;
-        border: 10px solid transparent;
-        transition: border-color 1s ease;
-    }
-    #personal-info img:hover {
-        border-color: darkblue;
-    }
-    .menu-btn {
-        display: none;
-        background: none;
-        border: none;
-        font-size: 2em;
-        cursor: pointer;
-    }
-    .menu-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.8);
-        justify-content: center;
-        align-items: center;
-        z-index: 1001;
-    }
-    .menu-overlay nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background: white;
-        padding: 20px;
-        border-radius: 20px;
-        position: relative;
-    }
-    .menu-overlay nav a {
-        margin: 10px 0;
-        color: black;
-    }
-    .close-btn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background: none;
-        border: none;
-        font-size: 2em;
-        color: red;
-        cursor: pointer;
-    }
-    @media (max-width: 768px) {
-        nav {
-            display: none;
-        }
-        .menu-btn {
-            display: block;
-        }
-    }
+    
 </style>
 </head>
 <body>
@@ -143,17 +37,51 @@
 </div>
 
 <section id="personal-info">
-    <div>
+    <!-- <div>
         <img src="your-image.jpg" alt="Your Image" width="200">
         <h1>Personal Information</h1>
         <p>Your personal information goes here.</p>
+    </div> -->
+
+    <div class="profile-card profile-1a" id="profile-1b">
+        <h2 class="profile-heading">Personal Information</h2>
+        <div class="card-content">
+            <div class="left-content">
+                <p><strong>Name:</strong> John Doe</p>
+                <p><strong>Age:</strong> 30</p>
+                <p><strong>Gender:</strong> Male</p>
+                <p><strong>Living City:</strong> New York</p>
+            </div>
+            <div class="right-content">
+                <img src="MSC22403.png" alt="Profile Image">
+            </div>
+        </div>
     </div>
+    
+
+    
+    
+
 </section>
 
 <section id="research-interest">
-    <div>
+    <!-- <div>
         <h1>Research Interest</h1>
         <p>Your research interests go here.</p>
+    </div> -->
+    <div id="unique-research-interests" class="research-interests">
+        <h2>Research Interests</h2>
+        <ul>
+            <li>Photoacoustic Tomography (PAT)</li>
+            <li>Photoacoustic Microscopy (PAM)</li>
+            <li>Biomedical Image Analysis</li>
+            <li>Deep Learning</li>
+            <li>Cloud Computing</li>
+            <li>Medical Instrumentation</li>
+            <li>Magnetic Resonance Imaging (MRI)</li>
+            <li>Quantum Information Theory</li>
+            <li>Physics-Informed Neural Network</li>
+        </ul>
     </div>
 </section>
 
