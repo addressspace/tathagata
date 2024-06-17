@@ -159,29 +159,41 @@
         <section id="personal-info">
             <div>
                 <h1>Personal Information</h1>
-                <p>Details about yourself.</p>
+                <p>Hello! I'm John Doe, a passionate web developer with a love for creating dynamic and responsive web applications. I enjoy solving complex problems and learning new technologies.</p>
             </div>
             <img src="https://via.placeholder.com/150" alt="Profile Picture" id="profile-pic">
         </section>
         <section id="research-interest">
             <h1>Research Interest</h1>
-            <p>Details about your research interests.</p>
+            <p>My research interests include machine learning, artificial intelligence, and data science. I am particularly interested in how AI can be used to solve real-world problems and improve everyday life.</p>
         </section>
         <section id="education">
             <h1>Education</h1>
-            <p>Details about your education.</p>
+            <p>I hold a Bachelor of Science in Computer Science from XYZ University, where I graduated with honors. I also completed various online courses and certifications to enhance my skills in web development and machine learning.</p>
         </section>
         <section id="course-work">
             <h1>Course Work</h1>
-            <p>Details about your course work.</p>
+            <p>Throughout my education, I have completed coursework in algorithms, data structures, software engineering, database systems, and artificial intelligence. These courses provided me with a strong foundation in computer science principles and practical skills.</p>
         </section>
         <section id="skills">
             <h1>Skills</h1>
-            <p>Details about your skills.</p>
+            <ul>
+                <li>Proficient in HTML, CSS, JavaScript, and React</li>
+                <li>Experienced with backend development using Node.js and Express</li>
+                <li>Knowledgeable in database management with MySQL and MongoDB</li>
+                <li>Familiar with machine learning frameworks such as TensorFlow and PyTorch</li>
+                <li>Strong problem-solving and debugging skills</li>
+            </ul>
         </section>
         <section id="projects">
             <h1>Projects</h1>
-            <p>Details about your projects.</p>
+            <p>Here are a few of my notable projects:</p>
+            <ul>
+                <li><strong>Portfolio Website:</strong> A personal website showcasing my skills, projects, and experience.</li>
+                <li><strong>Weather App:</strong> A web application that displays weather information based on the user's location using the OpenWeatherMap API.</li>
+                <li><strong>Chat Application:</strong> A real-time chat application built with Node.js, Express, and Socket.io.</li>
+                <li><strong>Machine Learning Model:</strong> A predictive model that analyzes customer data to forecast future sales.</li>
+            </ul>
         </section>
     </div>
 
@@ -217,10 +229,10 @@
             });
 
             // Change background color on scroll
-            document.body.style.backgroundColor = `rgb(${(scrollTop % 255)}, ${(scrollTop % 255)}, ${(scrollTop % 255)})`;
+            document.body.style.backgroundColor = `rgb(${255 - (scrollTop % 100)}, ${255 - (scrollTop % 100)}, ${255 - (scrollTop % 100)})`;
 
             // Change border color of profile picture
-            profilePic.style.borderColor = `rgb(${(scrollTop % 255)}, ${(scrollTop % 150)}, ${(scrollTop % 255)})`;
+            profilePic.style.borderColor = `rgb(${(scrollTop % 255)}, ${(scrollTop % 255)}, ${(scrollTop % 255)})`;
         });
 
         function toggleMobileNav() {
