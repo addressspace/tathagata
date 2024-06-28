@@ -1,330 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tathagata Das</title>
-<link rel="icon" type="image/x-icon" href="MSC22403.png">
-<link rel="stylesheet" href="main.css">
-<link rel="stylesheet" href="personal.css">
-<link rel="stylesheet" href="reseach-interest.css">
-<link rel="stylesheet" href="education.css">
-<link rel="stylesheet" href="research.css">
-<link rel="stylesheet" href="skill.css">
-<link rel="stylesheet" href="coursework.css">
-<link rel="stylesheet" href="contact.css">
-<style>
-    
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portfolio</title>
+  <style>
+    /* Hide scrollbars for all elements */
+* {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+*::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+}
+
+    html {
+  scroll-behavior: smooth;
+}
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      background-color: #f4f4f4;
+    }
+    nav {
+      background-color: #857ac3dc;
+      color: #fff;
+      padding: 1em;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 1em;
+      text-decoration: none;
+    }
+    .menu-icon {
+      display: none;
+      cursor: pointer;
+    }
+    .menu-icon span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      background-color: #fff;
+    }
+    .nav-links {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+    }
+    section {
+      padding: 2em;
+      margin: 2em;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+    .profile-img {
+      width: 150px;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .justified-text {
+      text-align: justify;
+    }
+    footer {
+      background-color: #cdbcf5;
+      color: #fff;
+      text-align: center;
+      padding: 1em 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        /*background-color: #45134ae4;*/
+        background-image: linear-gradient(#857ac3dc, rgb(21, 21, 19));
+        z-index: 1;
+        border-radius: 0px 0px 50px 50px;
+        border: 0px 0px 0px 5px solid rgb(249, 245, 245);
+      }
+      .nav-links a {
+        margin: 1em 0;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .close-btn {
+        display: block;
+        color: red;
+        font-size: 24px;
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+      }
+      .student-name {
+        display: block;
+        color: #fff;
+        font-size: 18px;
+        margin: 0 auto;
+      }
+    }
+    @media (min-width: 769px) {
+      .close-btn {
+        display: none;
+      }
+      .student-name {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
-<header>
-    <button class="menu-btn">&#x2026;</button>
-    <nav>
-        <a href="#personal-info">Personal Information</a>
-        <a href="#research-interest">Research Interest</a>
-        <a href="#education">Education</a>
-        <a href="#course-work">Course Work</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contacts</a>
-    </nav>
-</header>
-
-<div class="menu-overlay">
-    <nav>
-        <button class="close-btn">&times;</button>
-        <a href="#personal-info">Personal Information</a>
-        <a href="#research-interest">Research Interest</a>
-        <a href="#education">Education</a>
-        <a href="#course-work">Course Work</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contacts</a>
-    </nav>
-</div>
-
-<section id="personal-info">
-    <!-- <div>
-        <img src="your-image.jpg" alt="Your Image" width="200">
-        <h1>Personal Information</h1>
-        <p>Your personal information goes here.</p>
-    </div> -->
-
-    <div class="info-tile">
-        <div class="image-container">
-            <img src="MSC22403.png" alt="Profile Picture">
-        </div>
-        <div class="details">
-            <h2>Tathagata Das</h2>
-            <p>MSc Student</p>
-            <p>Email: tathagatadasworkspace@gmail.com</p>
-            <p>Phone: +91 88xxx 25xx8</p>
-        </div>
+  <nav>
+    <div class="menu-icon" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-    
-</section>
-
-<section id="research-interest">
-    <!-- <div>
-        <h1>Research Interest</h1>
-        <p>Your research interests go here.</p>
-    </div> -->
-    <div id="unique-research-interests" class="research-interests">
-        <h2>Research Interests</h2>
-        <ul>
-            <li>Photoacoustic Tomography (PAT)</li>
-            <li>Photoacoustic Microscopy (PAM)</li>
-            <li>Biomedical Image Analysis</li>
-            <li>Deep Learning</li>
-            <li>Cloud Computing</li>
-            <li>Medical Instrumentation</li>
-            <li>Magnetic Resonance Imaging (MRI)</li>
-            <li>Quantum Information Theory</li>
-            <li>Physics-Informed Neural Network</li>
-        </ul>
+    <span class="student-name">Tathagata Das</span></span>
+    <div class="nav-links" id="navLinks">
+      <!-- <span class="close-btn" onclick="toggleMenu()">✖</span> -->
+      <a href="#personal-info" onclick="toggleMenu()">Personal Info</a>
+      <a href="#research-interests" onclick="toggleMenu()">Research Interests</a>
+      <a href="#education" onclick="toggleMenu()">Education</a>
+      <a href="#coursework" onclick="toggleMenu()">Coursework</a>
+      <a href="#skills" onclick="toggleMenu()">Skills</a>
+      <a href="#projects" onclick="toggleMenu()">Projects</a>
+      <a href="#contacts" onclick="toggleMenu()">Contacts</a>
     </div>
-</section>
+  </nav>
 
-<section id="education">
-    <!-- <div>
-        <h1>Education</h1>
-        <p>Your education details go here.</p>
-    </div> -->
-    <!-- <div class="education-tile">
-        <div class="education-item">
-            <div class="institution">School of Physics, Indian Institute of Science Education and Research, Thiruvananthapuram</div>
-            <div class="course-details">
-                <span class="course">Ph.D. in Physics</span>
-                <span class="cgpa">CGPA: 9.2/10</span>
-                <span class="percentage">Percentage: 92%</span>
-            </div>
-        </div>
-        <div class="education-item">
-            <div class="institution">Department of Physics, Ramakrishna Mission Vivekananda Centenary College, Rahara, Kolkata</div>
-            <div class="course-details">
-                <span class="course">M.Sc. in Physics</span>
-                <span class="cgpa">CGPA: 8.5/10</span>
-                <span class="percentage">Percentage: 85%</span>
-            </div>
-        </div>
-        <div class="education-item">
-            <div class="institution">Science Stream, Egra J L High School, Egra, Purba Medinipur</div>
-            <div class="course-details">
-                <span class="course">Higher Secondary</span>
-                <span class="percentage">Percentage: 90%</span>
-            </div>
-        </div>
-        <div class="education-item">
-            <div class="institution">Basic Science Arts Language, Panchrol High School, Panchrol, Purba Medinipur</div>
-            <div class="course-details">
-                <span class="course">Secondary</span>
-                <span class="percentage">Percentage: 88%</span>
-            </div>
-        </div>
+  <section id="personal-info" class="justified-text">
+    <div class="container">
+      <img src="MSC22403.png" alt="Profile Picture" class="profile-img">
+      <h2><a href="https://drive.google.com/file/d/1OdZEpFQwE3gItBkYqgTPEhY2HgmSd9u-/view?usp=sharing" target="_blank"  style="color: inherit; text-decoration: none;">Tathagata Das</a></h2>
+      <div>
+        <!-- <p><strong>Gender:</strong> Male</p>
+        <p><strong>Nationality:</strong> Indian</p>
+        <p><strong>Date of Birth:</strong> 20th December, 2001</p> -->
+        <p>I hold an MSc in Physics with a focus on biomedical imaging, having completed a significant project in this field. I am now seeking a PhD position to further my research and expertise in biomedical imaging.</p>
+      </div>
+      
     </div>
-     -->
+  </section>
 
-     <div class="education-tile">
-        <h2 class="education-heading">Education</h2>
-        <div class="education-item">
-            <div class="institution-details">
-                <div class="institution">School of Physics, Indian Institute of Science Education and Research, Thiruvananthapuram</div>
-                <div class="year">2020 - 2024</div>
-            </div>
-            <div class="course-details">
-                <span class="course">Ph.D. in Physics</span>
-                <span class="cgpa">CGPA: 9.2/10</span>
-                <span class="percentage">Percentage: 92%</span>
-            </div>
-        </div>
-        <div class="education-item">
-            <div class="institution-details">
-                <div class="institution">Department of Physics, Ramakrishna Mission Vivekananda Centenary College, Rahara, Kolkata</div>
-                <div class="year">2018 - 2020</div>
-            </div>
-            <div class="course-details">
-                <span class="course">M.Sc. in Physics</span>
-                <span class="cgpa">CGPA: 8.5/10</span>
-                <span class="percentage">Percentage: 85%</span>
-            </div>
-        </div>
-        <div class="education-item">
-            <div class="institution-details">
-                <div class="institution">Science Stream, Egra J L High School, Egra, Purba Medinipur</div>
-                <div class="year">2016 - 2018</div>
-            </div>
-            <div class="course-details">
-                <span class="course">Higher Secondary</span>
-                <span class="percentage">Percentage: 90%</span>
-            </div>
-        </div>
-        <div class="education-item">
-            <div class="institution-details">
-                <div class="institution">Basic Science Arts Language, Panchrol High School, Panchrol, Purba Medinipur</div>
-                <div class="year">2014 - 2016</div>
-            </div>
-            <div class="course-details">
-                <span class="course">Secondary</span>
-                <span class="percentage">Percentage: 88%</span>
-            </div>
-        </div>
-    </div>
+  <section id="research-interests" class="justified-text">
+    <h2>Research Interests</h2>
+    <hr>
+    <p>Ultrasound Sound Imaging, Photoacoustic Tomography (PAT), Photoacoustic Microscopy (PAM), Medical Image Analysis, Medical instrumentation, Machine Learning/Deep Learning, Physics-Informed Neural Network, Magnetic Resonance Imaging (MRI), Cloud Computing, Quantum Information Theory.
+    </p>
+    <hr>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <hr>
+    <p><strong>School of Physics, Indian Institute of Science Education and Research, Thiruvananthapuram</strong></p>
+    <p>Master of Science </p>
+    <p>Aug 2022 - June 2024</p>
+    <p>CGPA: 7.20/10</p>
+    <hr>
+
     
 
-</section>
 
-<section id="course-work">
-    <!-- <div>
-        <h1>Course Work</h1>
-        <p>Your course work details go here.</p>
-    </div> -->
-    <div class="coursework-tile">
-        <div class="coursework-heading">Coursework</div>
-        <div class="course-columns">
-            <div class="course-column">
-                <div class="course-subheading">Foundation Courses</div>
-                <div class="course-para">
-                    Principles of Digital Imaging, Digital Image Processing, Mathematical Methods in Physics, Statistical and Data Analysis Methods in Physical Sciences, Numerical Methods, Analogue Systems and Applications, Digital Systems and Applications, Wave and Optics, Statistical Mechanics, Condensed Matter Physics, English Communication.
-                </div>
-            </div>
-            <div class="course-column">
-                <div class="course-subheading">Research Oriented Courses</div>
-                <div class="course-para">
-                    Quantum Information Theory, Quantum Mechanics and Applications.
-                </div>
-            </div>
-        </div>
+    <p><strong>Department of Physics, Ramakrishna Mission Vivekananda Centenary College, Rahara, Kolkata
+    </strong></p>
+    <p>Bachelor of Science</p>
+    <p>July 2019 - June 2022</p>
+    <p>CGPA: 8.07/10</p>
+    <hr>
+
+    <p><strong>Science Stream, Egra J L High School, Egra, Purba Medinipur
+    </strong></p>
+    <p> Senior Secondary Education </p>
+    <p>Jun 2017  -  May 2019   
+      </p>
+    <p>Percentage: 85.8/100</p>
+    <hr>
+
+    <p><strong>Basic Science Arts Language, Panchrol High School, Panchrol, Purba Medinipur</strong></p>
+    <p>Secondary Education</p>
+    <p>Jun 2015  -  May 2017   
+      </p>
+    <p>Percentage: 88/100</p>
+    <hr>
+
+  </section>
+
+  <section id="coursework">
+    <h2>Coursework</h2>
+    <ul>
+      <li>Principles of Digital Imaging</li>
+      <li>Digital Image Processing</li>
+      <li>Mathematical Methods in Physics</li>
+      <li>Statistical and Data Analysis Methods in Physical Sciences</li>
+      <li>Numerical Methods</li>
+      <li>Quantum Information Theory</li>
+      <li>Quantum Mechanics and Applications</li>
+      <li>Analogue Systems and Applications</li>
+      <li>Digital Systems and Applications</li>
+      <li>Wave and Optics</li>
+      <li>Statistical Mechanics</li>
+      <li>Condensed Matter Physics</li>
+      <li>English Communication</li>
+    </ul>
+    
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li><strong>Programming Languages:</strong> C, MATLAB, Python</li>
+      <li><strong>Scripting Languages:</strong> JavaScript, PHP</li>
+      <li><strong>Machine Learning Framework:</strong> PyTorch</li>
+      <li><strong>Operating Systems:</strong> Windows, Linux</li>
+      <li><strong>Simulation:</strong> k-Wave MATLAB tool box</li>
+      <li><strong>Office Tools:</strong> MS Word, MS PowerPoint, MS Excel</li>
+      <li><strong>Web Development:</strong> Flask, HTML, CSS</li>
+      <li><strong>Other:</strong> HPC, Cloud Computing</li>
+    </ul>
+    
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <hr>
+    <div>
+      <h4>Project I (Completed)</h4>
+      <h4>Fast Adaptive U-Net (FAU-Net): Novel Deep-Learning Network for Photoacoustic Imaging (PAI)</h4>
+      <p><strong>BnBEng.LAB, IISER TVM</strong></p>
+      <p><strong>Supervisor:</strong> Dr. Mayanglambam Suheshkumar Singh, Associate Professor, IISER Thiruvananthapuram</p>
+      <p><strong>Experiences:</strong></p>
+      <ul>
+        <li>Handling laser</li>
+        <li>Acquiring data from a home-built photoacoustic imaging setup</li>
+        <li>Analyzing raw transducer data</li>
+        <li>Beamforming</li>
+        <li>Processing data</li>
+        <li>Applying reconstruction algorithms</li>
+        <li>Implementing deep learning techniques</li>
+      </ul>
+      <p><strong>Duration:</strong> Jul 2023 – Jan 2024</p>
     </div>
     
-    
-</section>
-
-<section id="skills">
-    <!-- <div>
-        <h1>Skills</h1>
-        <p>Your skills go here.</p>
-    </div> -->
-
-    <div class="skill-tile">
-        <h1 class="skill-heading">Skills</h1>
-        
-        <div class="section">
-            <div class="section-heading">Computational Skills</div>
-            <div class="skill-item">
-                <div class="skill-category">Programming Languages:</div>
-                <div class="skill-details">Python, C, MATLAB</div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-category">Libraries/Frameworks:</div>
-                <div class="skill-details">PyTorch, Flask, HTML, CSS</div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-category">Toolbox:</div>
-                <div class="skill-details">k-Wave MATLAB toolbox</div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-category">Web Development:</div>
-                <div class="skill-details">JavaScript, PHP</div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-category">Operating Systems:</div>
-                <div class="skill-details">Windows, Linux</div>
-            </div>
-        </div>
-        
-        <div class="section">
-            <div class="section-heading">Instrumentation</div>
-            <div class="skill-item">
-                <div class="skill-category">Office Tools:</div>
-                <div class="skill-details">MS Word, MS PowerPoint, MS Excel</div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-category">Others:</div>
-                <div class="skill-details">HPC, Cloud Computing</div>
-            </div>
-        </div>
+    <hr>
+    <div>
+      <h4>Project II (In-Progress)</h4>
+      <h4>Deep Learning-Powered Focus Stabilization in Light Sheet Microscopy</h4>
+      <p><strong>BnBEng.LAB, IISER TVM</strong></p>
+      <p><strong>Supervisor:</strong> Dr. Mayanglambam Suheshkumar Singh, Associate Professor, IISER Thiruvananthapuram</p>
+      <p><strong>Experiences:</strong></p>
+      <ul>
+        <li>Acquiring data from Light Sheet Microscopy</li>
+        <li>Implementing deep learning techniques</li>
+      </ul>
+      <p><strong>Duration:</strong> Feb 2024 – Ongoing</p>
     </div>
-
-</section>
-
-<section id="projects">
-    <!-- <div>
-        <h1>Projects</h1>
-        <p>Your projects go here.</p>
-    </div> -->
-
-    <div class="research-experience-tile">
-        <h1 class="research-heading">Research Experience</h1>
-        <div class="project-item">
-            <div class="project-name-details">
-                <p class="project-name"><strong>Project: Development of Photoacoustic Imaging System</strong></p>
-                <span class="year">2023</span>
-            </div>
-            <div class="institution-details">
-                <p class="institution"><strong>Supervisor: Dr. Mayanglambam Suheshkumar Singh, Associate professor, IISER Thiruvananthapuram</strong></p>
-            </div>
-            <p class="course-details"><strong>Experiences:</strong> Handling laser, acquiring data from a home-built photoacoustic imaging setup, analyzing raw transducer data, beamforming, processing this data, applying reconstruction algorithms, and implementing deep learning techniques</p>
-        </div>
-
-        <div class="project-item">
-            <div class="project-name-details">
-                <p class="project-name"><strong>Project: Light Sheet Microscopy Analysis</strong></p>
-                <span class="year">2022</span>
-            </div>
-            <div class="institution-details">
-                <p class="institution"><strong>Supervisor: Dr. Mayanglambam Suheshkumar Singh, Associate professor, IISER Thiruvananthapuram</strong></p>
-            </div>
-            <p class="course-details"><strong>Experiences:</strong> acquiring data from Light Sheet Microscopy, and implementing deep learning techniques</p>
-        </div>
-    </div>
+    <hr>
     
-</section>
+
+    </section>
 
 
+  <section id="contacts">
+    <h2>Contacts</h2>
+    <p>Email: tathagatadasworkspace@gmail.com</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/tathagatalinked/" target="_blank">https://www.linkedin.com/in/tathagatalinked/</a></p>
+    <p>GitHub: <a href="https://github.com/addressspace" target="_blank">https://github.com/addressspace</a></p>
+  </section>
 
+  <footer>
+    <p>&copy; 2024 tathagata das. All Rights Reserved.</p>
+  </footer>
 
-
-
-
-<section id="contact">
-    <!-- <div>
-        <img src="your-image.jpg" alt="Your Image" width="200">
-        <h1>Personal Information</h1>
-        <p>Your personal information goes here.</p>
-    </div> -->
-
-    <div class="contact-tile">
-        <h2>Contact Me</h2>
-        <div class="contact-details">
-            <a href="https://www.linkedin.com/in/tathagatalinked" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="icon"> LinkedIn
-            </a>
-
-            <a href="https://github.com/addressspace" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="icon"> GitHub
-            </a>
-
-            <a href="mailto:tathagatadasworkspace@gmail.com">
-                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="icon"> Email
-            </a>
-        </div>
-    </div>
-    
-</section>
-
-
-<footer>
-    <!-- <div id="clock" style="display: inline;"></div> | Developed by Tathagata Das -->
-    &copy; 2024 Tathagata Das. All Rights Reserved.
-</footer>
-
-
-
-<!-- <script src="javascript/reseach-interest.js"></script>
-<script src="javascript/main.js"></script> -->
-<script src="reseach-interest.js"></script>
-<!-- <script src="clock.js"></script> -->
-<script src="main.js"></script>
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
