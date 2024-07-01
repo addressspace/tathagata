@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tathagata Das</title>
   <link rel="icon" type="image/x-icon" href="MSC22403.png">
+  <link rel="stylesheet" href="fireflies.css">
   <style>
     /* Hide scrollbars for all elements */
 * {
@@ -25,10 +26,10 @@
       margin: 0;
       padding: 0;
       scroll-behavior: smooth;
-      background-color: #f4f4f4;
+      /* background-color: #f4f4f4; */
     }
     nav {
-      background-color: #857ac3dc;
+      background-color: #0d0a1adc;
       color: #fff;
       padding: 1em;
       text-align: center;
@@ -61,12 +62,15 @@
       justify-content: center;
     }
     section {
+      color: azure;
       padding: 2em;
       margin: 2em;
-      background: #fff;
+      background: #1b191995;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       border-radius: 8px;
     }
+
+    
     .profile-img {
       width: 150px;
       border-radius: 50%;
@@ -81,7 +85,7 @@
       text-align: justify;
     }
     footer {
-      background-color: #cdbcf5;
+      background-color: #0d0a1adc;
       color: #fff;
       text-align: center;
       padding: 1em 0;
@@ -102,7 +106,7 @@
         top: 60px;
         left: 0;
         /*background-color: #45134ae4;*/
-        background-image: linear-gradient(#857ac3dc, rgb(21, 21, 19));
+        background-image: linear-gradient(#0d0a1adc, rgb(21, 21, 19));
         z-index: 1;
         border-radius: 0px 0px 50px 50px;
         border: 0px 0px 0px 5px solid rgb(249, 245, 245);
@@ -140,6 +144,10 @@
   </style>
 </head>
 <body>
+
+<div id="fireflies-container"></div>
+
+
   <nav>
     <div class="menu-icon" onclick="toggleMenu()">
       <span></span>
@@ -309,5 +317,8 @@
       navLinks.classList.toggle('active');
     }
   </script>
+
+
+<script src="fireflies.js"></script>
 </body>
 </html>

@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: #000000d1;
+}
+
+#fireflies-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* Ensures fireflies don't interfere with other elements */
+    z-index: -20; /* Place fireflies container behind all interactive content */
+}
+
+.firefly {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 10px yellow;
+    animation: blink 2s ease-in-out infinite;
+    pointer-events: none; /* Ensures individual fireflies don't interfere with other elements */
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 0.1;
+    }
+    50% {
+        opacity: 1;
+    }
+}
