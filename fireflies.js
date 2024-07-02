@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const numberOfFireflies = 10;
+    const numberOfFireflies = 20;
     const container = document.createElement('div');
     container.id = 'fireflies-container';
     document.body.appendChild(container);
