@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
-    background-color: #000000d1;
+    background-color: #0a192f;
 }
 
 #fireflies-container {
@@ -13,24 +13,52 @@ body {
     height: 100vh;
     pointer-events: none; /* Ensures fireflies don't interfere with other elements */
     z-index: -20; /* Place fireflies container behind all interactive content */
+    overflow: hidden;
 }
 
 .firefly {
     position: absolute;
-    width: 5px;
-    height: 5px;
-    background-color: yellow;
+    width: 4px;
+    height: 4px;
+    background-color: transparent;
     border-radius: 50%;
-    box-shadow: 0 0 10px yellow;
-    animation: blink 2s ease-in-out infinite;
+    filter: blur(1px);
+    box-shadow: 0 0 15px 2px rgba(100, 255, 218, 0.8);
+    animation: blink 4s ease-in-out infinite;
     pointer-events: none; /* Ensures individual fireflies don't interfere with other elements */
 }
 
 @keyframes blink {
-    0%, 100% {
-        opacity: 0.1;
+    0% {
+        opacity: 0;
+        box-shadow: 0 0 5px 1px rgba(100, 255, 218, 0.3);
+    }
+    25% {
+        opacity: 0.8;
+        box-shadow: 0 0 12px 3px rgba(100, 255, 218, 0.7);
     }
     50% {
         opacity: 1;
+        box-shadow: 0 0 20px 5px rgba(100, 255, 218, 0.9);
     }
+    75% {
+        opacity: 0.8;
+        box-shadow: 0 0 12px 3px rgba(100, 255, 218, 0.7);
+    }
+    100% {
+        opacity: 0;
+        box-shadow: 0 0 5px 1px rgba(100, 255, 218, 0.3);
+    }
+}
+
+/* Add a subtle gradient background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    z-index: -30;
 }
