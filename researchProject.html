@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Projects</title>
+    <style>
+        :root {
+            --primary-color: #003366;
+            --secondary-color: #0066cc;
+            --accent-color: #1e3a8a;
+            --text-color: #333333;
+            --light-bg: #f5f7fa;
+            --border-color: #dddddd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            padding: 0;
+            margin: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header h2 {
+            font-size: 1.5rem;
+            font-weight: normal;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        .project {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            overflow: hidden;
+        }
+
+        .project-header {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .project-header h2 {
+            color: white;
+            border-bottom: none;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .authors {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .affiliations {
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .project-description {
+            margin-bottom: 2rem;
+            text-align: justify;
+        }
+
+        .publication-info {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .publication-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-info a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .publication-info a:hover {
+            text-decoration: underline;
+        }
+
+        .figures-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 30px;
+            margin-top: 2rem;
+        }
+
+        .figure-item {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .figure-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .figure-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .figure-caption {
+            padding: 1.5rem;
+        }
+
+        .figure-caption h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        .figure-caption p {
+            font-size: 1.05rem;
+        }
+
+        .introduction ul {
+            padding-left: 2rem;
+        }
+
+        .introduction li {
+            margin-bottom: 1rem;
+        }
+
+        .references {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin-top: 2rem;
+        }
+
+        .references h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .references ol {
+            padding-left: 2rem;
+        }
+
+        .references li {
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+            margin-top: 3rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--accent-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--primary-color);
+        }
+
+        .project-divider {
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--secondary-color), transparent);
+            margin: 4rem 0;
+        }
+
+        .table-of-contents {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .table-of-contents h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .table-of-contents ul {
+            list-style-type: none;
+        }
+
+        .table-of-contents li {
+            margin-bottom: 0.5rem;
+        }
+
+        .table-of-contents a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .table-of-contents a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .figures-container {
+                grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            header h2 {
+                font-size: 1.2rem;
+            }
+            
+            .figures-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Research Projects</h1>
+        <h2>Advanced Imaging Techniques & Deep Learning Applications</h2>
+    </header>
+
+    <div class="container">
+        <section class="table-of-contents">
+            <h3>Research Projects</h3>
+            <ul>
+                <li><a href="#project1">Optimizing Photoacoustic Imaging: Deep Learning Techniques to Overcome Limited-View Problem</a></li>
+                <li><a href="#project2">Beyond the lens: Transforming light sheet fluorescence microscopy through stochastic elegance and iterative image refinement</a></li>
+                <li><a href="#project3">Deep Learning-Based Photoacoustic Image Reconstruction Using a Single-Element Low-Frequency PMUT</a></li>
+            </ul>
+        </section>
+
+        <!-- Project 1: Photoacoustic Imaging with FAU-Net -->
+        <section id="project1" class="project">
+            <div class="project-header">
+                <h2>Optimizing Photoacoustic Imaging: Deep Learning Techniques to Overcome Limited-View Problem</h2>
+            </div>
+            <div class="project-content">
+                <div class="authors">
+                    <p>Tathagata Das<sup>1</sup>, Arijit Paramanick<sup>1</sup>, Souradip Paul, and Mayanglambam Suheshkumar Singh<sup>*</sup></p>
+                    <p class="affiliations">
+                        Biomedical and Nano-bioscience Engineering Lab. (BnBEng.LAB), School of Physics (SoP), Indian Institute of Science Education and Research Thiruvananthapuram (IISER TVM), Kerala, India<br>
+                        <sup>1</sup> Authors contribute equally. <sup>*</sup> Corresponding author: suhesh.kumar@iisertvm.ac.in
+                    </p>
+                </div>
+
+                <div class="project-description">
+                    <p>
+                        This research focused on overcoming the limited-view problem in photoacoustic imaging through advanced deep learning techniques. 
+                        Our approach utilized a fast adaptive U-Net (FAU-Net) architecture to significantly enhance image reconstruction quality while 
+                        maintaining high frame rates (~3 Hz) using single-element ultrasound transducers. The methodology was validated through both 
+                        numerical simulations and experimental studies on diverse samples including mouse brain and goat eyes.
+                    </p>
+                    <p>
+                        Key contributions include addressing image distortion and under-sampling in photoacoustic imaging (PAI), improving image quality metrics 
+                        (PSNR, SSIM, SNR), implementing a faster deep learning algorithm, and working with a custom photoacoustic tomography (PAT) setup 
+                        integrated with ultrasound systems for real-time applications. We also applied acoustic resolution microscopy to ocular data analysis.
+                    </p>
+                </div>
+
+                <div class="publication-info">
+                    <h3>Publication Status</h3>
+                    <p style="font-style: italic; text-align: center; font-weight: bold;">
+                        Manuscript under preparation
+                    </p>
+                </div>
+
+                <h3>Research Figures</h3>
+                <div class="figures-container">
+                    <div class="figure-item">
+                        <img src="Pai_images/Figure_2.jpg" alt="Figure 2: Simulation Setup">
+                        <div class="figure-caption">
+                            <h3>Figure 2</h3>
+                            <p>(a) Tomography numerical simulation setup with linear transducer and agar phantom. (b) Microscopy numerical simulation setup with focused single-element transducer.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="figure-item">
+                        <img src="Pai_images/Figure_3.jpg" alt="Figure 3: Experimental Setup">
+                        <div class="figure-caption">
+                            <h3>Figure 3</h3>
+                            <p>(i) PAT system: (a) Photograph of home-built PAT imaging system. (b) Schematic diagram of experimental setup. (ii) PAM system: (a) Photograph of AR-PAM imaging system. (b) Schematic diagram of experimental setup.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="figure-item">
+                        <img src="Pai_images/Figure_4.jpg" alt="Figure 4: PAT Image Comparison">
+                        <div class="figure-caption">
+                            <h3>Figure 4</h3>
+                            <p>Reconstructed PAT images using conventional DAS, U-Net, HDU-Net, and FAU-Net, with SSIM and PSNR quantitative comparisons.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="figure-item">
+                        <img src="Pai_images/Figure_5.jpg" alt="Figure 5: Ex-vivo Tissue Results">
+                        <div class="figure-caption">
+                            <h3>Figure 5</h3>
+                            <p>(a) Photograph of ex-vivo chicken tissue sample. (b-e) Reconstruction results: DAS, U-Net, HDU-Net, FAU-Net. (f) Quantitative comparison of FWHM, SNR, and CR. (g) Lateral profile of target.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="figure-item">
+                        <img src="Pai_images/Figure_6.jpg" alt="Figure 6: In-vivo Mouse Imaging">
+                        <div class="figure-caption">
+                            <h3>Figure 6</h3>
+                            <p>Whole-body mouse imaging: MAP images reconstructed with U-Net, HDU-Net, and FAU-Net, with signal intensity profile comparison.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="figure-item">
+                        <img src="Pai_images/Figure_7.jpg" alt="Figure 7: PAM Simulations">
+                        <div class="figure-caption">
+                            <h3>Figure 7</h3>
+                            <p>PAM simulated reconstructions with direct mapping, U-Net, HDU-Net, and FAU-Net.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="figure-item">
+                        <img src="Pai_images/Figure_8.jpg" alt="Figure 8: Goat Eye Imaging">
+                        <div class="figure-caption">
+                            <h3>Figure 8</h3>
+                            <p>Projected MAP images from 3D goat-eye reconstructions using SAFT, SAFT+CF, and FAU-Net.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="figure-item">
+                        <img src="Pai_images/Figure_9.jpg" alt="Figure 9: Anatomical Layer Imaging">
+                        <div class="figure-caption">
+                            <h3>Figure 9</h3>
+                            <p>Sectional MAP images of goat eye using SAFT, SAFT+CF, and FAU-Net across anatomical layers (outer tunic, middle tunic, inner tunic) with PA signal intensity plots.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="figure-item">
+                        <img src="Pai_images/Figure_10.jpg" alt="Figure 10: Phantom Study">
+                        <div class="figure-caption">
+                            <h3>Figure 10</h3>
+                            <p>(a) Photograph of agar phantom with embedded human-hair targets. (b-e) Reconstructed 2D cross-sectional images: time-resolved, SAFT, SAFT+CF, FAU-Net. (iii-a,b) Line-plots for targets T1 and T14.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="references">
+                    <h3>References</h3>
+                    <ol>
+                        <li>Rajendran P, Pramanik M. High frame rate (∼3 Hz) circular photoacoustic tomography using single-element ultrasound transducer aided with deep learning. J Biomed Opt. 2022 Jun;27(6):066005. doi: 10.1117/1.JBO.27.6.066005. Epub 2022 Jun 20. PMID: 36452448; PMCID: PMC9209813.</li>
+                        <li>Davoudi, Neda & Dean-Ben, Xose Luis & Razansky, Daniel. (2019). Deep learning optoacoustic tomography with sparse data. Nature Machine Intelligence. 1. 1-8. 10.1038/s42256-019-0095-3.</li>
+                    </ol>
+                    
+                    <p style="margin-top: 15px;"><strong>Data Citation:</strong> Davoudi (2019). Data. figshare. Dataset. <a href="https://doi.org/10.6084/m9.figshare.9250784.v1" target="_blank">https://doi.org/10.6084/m9.figshare.9250784.v1</a></p>
+                </div>
+            </div>
+        </section>
+
+        <div class="project-divider"></div>
+
+        <!-- Project 2: Light Sheet Fluorescence Microscopy -->
+        <section id="project2" class="project">
+            <div class="project-header">
+                <h2>Beyond the lens: Transforming light sheet fluorescence microscopy through stochastic elegance and iterative image refinement</h2>
+            </div>
+            <div class="project-content">
+                <div class="authors">
+                    <p>Supervisor: Dr. Mayanglambam Suheshkumar Singh, Associate professor, IISER TVM</p>
+                </div>
+
+                <div class="project-description">
+                    <p>
+                        This project enhanced the focus stability of a novel sMx-SPIM system, capable of capturing images at multiple magnifications. 
+                        We applied deep learning techniques to maintain precise focus, even with challenging biological samples, ensuring clear and 
+                        consistent imaging across different resolutions.
+                    </p>
+                </div>
+
+                <div class="publication-info">
+                    <h3>Publication Information</h3>
+                    <p><strong>Title:</strong> Beyond the lens: Transforming light sheet fluorescence microscopy through stochastic elegance and iterative image refinement</p>
+                    <p><strong>DOI:</strong> <a href="https://doi.org/10.1117/12.3044215" target="_blank" rel="noopener">10.1117/12.3044215</a></p>
+                    <p><strong>Published in:</strong> SPIE Proceedings</p>
+                    <p><strong>Abstract:</strong> This work presents a novel approach to light sheet fluorescence microscopy, combining stochastic methods with iterative image refinement techniques. The research demonstrates enhanced focus stability in a multi-magnification SPIM system (sMx-SPIM) through the application of deep learning methodologies, particularly focusing on maintaining precise focus across challenging biological samples and different imaging resolutions.</p>
+                </div>
+
+                <h3>Research Figures</h3>
+                <div class="figures-container">
+                    <div class="figure-item">
+                        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                            <img src="lightsheetImages/figure1(a).png" alt="Figure 1(a)" style="flex: 1; min-width: 200px;">
+                            <img src="lightsheetImages/figure1(b).jpg" alt="Figure 1(b)" style="flex: 1; min-width: 200px;">
+                        </div>
+                        <div class="figure-caption">
+                            <h3>Figure 1</h3>
+                            <p>Workflow of Diffusion based SR3 model</p>
+                        </div>
+                    </div>
+                    
+                    <div class="figure-item">
+                        <img src="lightsheetImages/figure 2.png" alt="Figure 2" class="figure-image">
+                        <div class="figure-caption">
+                            <h3>Figure 2</h3>
+                            <p>(a) Cell images captured at 10x magnificaton, (b) the corresponding images generated by the SR3 model using (a) as input, and (c) depict the ground truth images acquired at 20x magnification.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="figure-item">
+                        <img src="lightsheetImages/figure3.png" alt="Figure 3" class="figure-image">
+                        <div class="figure-caption">
+                            <h3>Figure 3</h3>
+                            <p>A bar chart presenting the quantitative analysis of contrast ratio and signal-to-noise ratio (SNR) for images captured with an 11.11× lens, the SR3 model output, and a 22.22× lens.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="project-divider"></div>
+
+        <!-- Project 3: PMUT Photoacoustic Imaging -->
+        <section id="project3" class="project">
+            <div class="project-header">
+                <h2>Deep Learning-Based Photoacoustic Image Reconstruction Using a Single-Element Low-Frequency PMUT</h2>
+            </div>
+            <div class="project-content">
+                <div class="authors">
+                    <p>Arijit Paramanick<sup>1</sup>, Kaustav Roy<sup>2</sup>, Deepayan Samanta<sup>1</sup>, Tathagata Das<sup>1</sup>, Rudra Pratap<sup>2</sup>, M suheshkumar singh<sup>1</sup></p>
+                    <p class="affiliations">
+                        <sup>1</sup> School of Physics, Indian Institute of Science and Research Thiruvananthapuram (IISER-TVM), Maruthamala, Vithura, Thiruvanthapuram, India, 695551.<br>
+                        <sup>2</sup> Centre for Nano Science and Engineering, Indian Institute of Science, Bangalore, 560012
+                    </p>
+                </div>
+
+                <div class="publication-info">
+                    <p><strong>This work has been published in:</strong></p>
+                    <p>SPIE Proceedings - Photons Plus Ultrasound: Imaging and Sensing 2025</p>
+                    <p><strong>DOI:</strong> <a href="https://doi.org/10.1117/12.3043466" target="_blank">10.1117/12.3043466</a></p>
+                    <p class="publication-note">Available at: <a href="https://doi.org/10.1117/12.3043466" target="_blank">https://doi.org/10.1117/12.3043466</a></p>
+                </div>
+
+                <div class="introduction">
+                    <h3>Introduction</h3>
+                    <ul>
+                        <li>PA imaging technology provides signal or image contrast based on the optical absorption coefficient of the absorber.</li>
+                        <li>PMUT, a MEMS-based ultrasound transducer, can replace conventional bulk ultrasound transducers; however, it suffers from lower sensitivity and generates significantly noisier data compared to traditional ultrasound transducers.</li>
+                        <li>Here, we present a deep neural network method (modified U-Net), trained on simulated images, to address the challenges posed by significantly noisier PMUT signals, off-plane absorbers, and a limited number of scanning positions, with the aim of enhancing photoacoustic imaging (PAI) quality by improving spatial resolution, SNR, and CR.</li>
+                        <li>The network's performance was validated using experimental results including tissue mimicking agar phantom and ex-vivo.</li>
+                    </ul>
+                </div>
+
+                <h3>Research Figures</h3>
+                <div class="figures-container">
+                    <div class="figure-item">
+                        <img src="arijt_spie_poster/page1_img3.jpeg" alt="PAI System">
+                        <div class="figure-caption">
+                            <h3>Figure 1</h3>
+                            <p>The photoacoustic imaging (PAI) system: (i) The simulation setup used to generate the training data-set. (ii) The experimental setup to acquire the PA signals: (a) schematic diagram of the experimental PAI system, (b) a typical photograph of the home-built PMUT-setup.</p>
+                        </div>
+                    </div>
+
+                    <div class="figure-item">
+                        <img src="arijt_spie_poster/page1_img2.png" alt="Network Architecture">
+                        <div class="figure-caption">
+                            <h3>Figure 2</h3>
+                            <p>Schematic diagram of the proposed network architecture</p>
+                        </div>
+                    </div>
+
+                    <div class="figure-item">
+                        <img src="arijt_spie_poster/page1_img1.jpeg" alt="Network Performance on Simulated Data">
+                        <div class="figure-caption">
+                            <h3>Figure 3</h3>
+                            <p>Performance of the network on two types of simulated test datasets (disc-shaped and vasculature phantoms): (i-a, ii-a) images reconstructed using DAS (input to the CNN model), (i-b, ii-b) ground truth images, and (i-c, ii-c) predicted outputs.</p>
+                        </div>
+                    </div>
+
+                    <div class="figure-item">
+                        <img src="arijt_spie_poster/page1_img5.jpeg" alt="Network Performance on Agar Phantom">
+                        <div class="figure-caption">
+                            <h3>Figure 4</h3>
+                            <p>Evaluation of the network's performance on experimental results using a tissue-mimicking agar phantom embedded with four pencil lead targets, separated by 1 mm along both the lateral and axial axes: (a) A typical photograph of the experimental phantom, (b) photoacoustic (PA) image reconstructed using the DAS algorithm (input to the CNN model), (c) image predicted by the network, and (d) lateral profile of the marked target (T) from the scanning surface.</p>
+                        </div>
+                    </div>
+
+                    <div class="figure-item">
+                        <img src="arijt_spie_poster/page1_img8.jpeg" alt="Network Performance on Ex-vivo">
+                        <div class="figure-caption">
+                            <h3>Figure 5</h3>
+                            <p>Evaluation of the network's performance on a realistic photoacoustic (PA) specimen (ex-vivo): (a) photograph of the chicken tissue embedded with two graphite targets, (b) 3D volumetric image reconstructed using the DAS algorithm, and (c) 3D volumetric image reconstructed from the model's predicted output.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="references">
+                    <h3>References</h3>
+                    <ol>
+                        <li>Dangi, Ajay, et al. "A photoacoustic imaging device using piezoelectric micromachined ultrasound transducers (PMUTs)." IEEE transactions on ultrasonics, ferroelectrics, and frequency control 67.4 (2019): 801-809.</li>
+                        <li>Paramanick, Arijit, Deepayan Samanta, and Mayanglambam Suheshkumar Singh. "Non-zero data-filtering based photoacoustic image reconstruction: both for microscopy and tomography." IEEE Transactions on Instrumentation and Measurement (2025).</li>
+                        <li>Liao, W., et al. "Piezeoelectric micromachined ultrasound tranducer array for photoacoustic imaging." 2013 Transducers & Eurosensors XXVII: The 17th International Conference on Solid-State Sensors, Actuators and Microsystems (TRANSDUCERS & EUROSENSORS XXVII). IEEE, 2013.</li>
+                        <li>Paramanick, Arijit, et al. "Seeing Beyond: The Future of Photoacoustic Imaging with Single-element, Low-frequency Thin-film PMUT." IEEE Sensors Letters (2024).</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <a href="#" class="back-to-top" id="backToTop">↑</a>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 - Research Projects</p>
+        </div>
+    </footer>
+
+    <script>
+        // Back to top button functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopButton = document.getElementById('backToTop');
+            
+            // Show/hide back to top button based on scroll position
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            });
+            
+            // Smooth scroll to top when button is clicked
+            backToTopButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Add animation to figure items
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.figure-item').forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html> 
