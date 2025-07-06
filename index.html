@@ -9,12 +9,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <!-- <link rel="stylesheet" href="contactStyles.css"> -->
   <style>
     /* Hide scrollbars for all elements */
 * {
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* Internet Explorer 10+ */
+    box-sizing: border-box;
 }
 
 /* Hide scrollbar for Chrome, Safari, and Opera */
@@ -25,17 +28,51 @@
     html {
   scroll-behavior: smooth;
 }
+    :root {
+      --bg-color: #f8f5ff; /* Lavender blue background */
+      --text-color: #333;
+      --accent-color: #7b68ee; /* Medium slate blue */
+      --section-bg: rgba(255, 255, 255, 0.7); /* White with transparency */
+      --section-border: var(--accent-color);
+      --nav-bg: rgba(255, 255, 255, 0.7);
+      --nav-text: #333;
+      --highlight-color: #7b68ee;
+      --secondary-text: #555;
+      --item-bg: rgba(255, 255, 255, 0.5);
+      --shadow-color: rgba(123, 104, 238, 0.2);
+      --border-radius: 16px;
+    }
+
+    .dark-theme {
+      --bg-color: #0a192f;
+      --text-color: #e6f1ff;
+      --accent-color: #64ffda;
+      --section-bg: rgba(27, 25, 25, 0.4);
+      --section-border: #64ffda;
+      --nav-bg: rgba(13, 10, 26, 0.7);
+      --nav-text: #fff;
+      --highlight-color: #64ffda;
+      --secondary-text: #8892b0;
+      --item-bg: rgba(40, 38, 38, 0.3);
+      --shadow-color: rgba(100, 255, 218, 0.2);
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
       scroll-behavior: smooth;
       line-height: 1.6;
-      /* background-color: #f4f4f4; */
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      overflow-x: hidden;
+      word-wrap: break-word;
     }
+    
     nav {
-      background-color: rgba(13, 10, 26, 0.9);
-      color: #fff;
+      background-color: var(--nav-bg);
+      color: var(--nav-text);
       padding: 1em;
       text-align: center;
       display: flex;
@@ -44,11 +81,16 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px var(--shadow-color);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      border-radius: 0 0 var(--border-radius) var(--border-radius);
     }
+    
     nav a {
-      color: #fff;
+      color: var(--nav-text);
       margin: 0 1em;
       text-decoration: none;
       font-weight: 500;
@@ -56,9 +98,11 @@
       position: relative;
       padding: 5px 0;
     }
+    
     nav a:hover {
-      color: #64ffda;
+      color: var(--accent-color);
     }
+    
     nav a::after {
       content: '';
       position: absolute;
@@ -66,43 +110,52 @@
       height: 2px;
       bottom: 0;
       left: 0;
-      background-color: #64ffda;
+      background-color: var(--accent-color);
       transition: width 0.3s ease;
     }
+    
     nav a:hover::after {
       width: 100%;
     }
+    
     .menu-icon {
       display: none;
       cursor: pointer;
     }
+    
     .menu-icon span {
       display: block;
       width: 25px;
       height: 3px;
       margin: 5px auto;
-      background-color: #fff;
+      background-color: var(--nav-text);
       transition: all 0.3s ease;
     }
+    
     .nav-links {
       display: flex;
       flex: 1;
       justify-content: center;
     }
+    
     section {
-      color: #e6f1ff;
+      color: var(--text-color);
       padding: 3em;
       margin: 3em auto;
-      background: rgba(27, 25, 25, 0.7);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      border-radius: 12px;
+      background: var(--section-bg);
+      box-shadow: 0 10px 30px var(--shadow-color);
+      border-radius: var(--border-radius);
       max-width: 1000px;
-      border-left: 3px solid #64ffda;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-left: 3px solid var(--section-border);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
     }
+    
     section:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+      box-shadow: 0 15px 35px var(--shadow-color);
     }
     
     .profile-img {
@@ -110,17 +163,20 @@
       height: 180px;
       object-fit: cover;
       border-radius: 50%;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-      border: 3px solid #64ffda;
+      box-shadow: 0 8px 32px var(--shadow-color);
+      border: 3px solid var(--accent-color);
       transition: transform 0.3s ease;
     }
+    
     .profile-img:hover {
       transform: scale(1.05);
     }
+    
     .profile-container {
       position: relative;
       margin-bottom: 20px;
     }
+    
     .profile-glow {
       position: absolute;
       top: 0;
@@ -129,10 +185,15 @@
       height: 100%;
       border-radius: 50%;
       background: transparent;
-      box-shadow: 0 0 25px rgba(100, 255, 218, 0.5);
+      box-shadow: 0 0 25px rgba(123, 104, 238, 0.5);
       animation: pulse 3s infinite ease-in-out;
       z-index: -1;
     }
+    
+    .dark-theme .profile-glow {
+      box-shadow: 0 0 25px rgba(100, 255, 218, 0.5);
+    }
+    
     @keyframes pulse {
       0%, 100% {
         transform: scale(1);
@@ -143,136 +204,441 @@
         opacity: 0.8;
       }
     }
+    
     .tagline {
       margin: 10px 0 20px;
       font-size: 1.1em;
-      color: #8892b0;
+      color: var(--secondary-text);
     }
+    
     .highlight {
-      color: #64ffda;
+      color: var(--highlight-color);
       font-weight: 500;
     }
+    
     .bio {
       max-width: 600px;
       margin: 0 auto;
       line-height: 1.8;
     }
+    
     .container {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
+    
     .justified-text {
       text-align: justify;
     }
+    
     footer {
-      background-color: rgba(13, 10, 26, 0.9);
-      color: #fff;
+      background-color: var(--nav-bg);
+      color: var(--nav-text);
       text-align: center;
       padding: 1.5em 0;
       position: relative;
       bottom: 0;
       width: 100%;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 -4px 20px var(--shadow-color);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
     }
+    
     h2 {
-      color: #64ffda;
+      color: var(--highlight-color);
       margin-bottom: 1em;
       position: relative;
       display: inline-block;
     }
+    
     h4 {
-      color: #ccd6f6;
+      color: var(--text-color);
       margin-bottom: 0.5em;
     }
+    
     hr {
       border: none;
       height: 1px;
-      background: linear-gradient(to right, transparent, rgba(100, 255, 218, 0.5), transparent);
+      background: linear-gradient(to right, transparent, rgba(123, 104, 238, 0.5), transparent);
       margin: 1.5em 0;
     }
+    
+    .dark-theme hr {
+      background: linear-gradient(to right, transparent, rgba(100, 255, 218, 0.5), transparent);
+    }
+    
     ul {
       padding-left: 1.2em;
     }
+    
     li {
       margin-bottom: 0.5em;
       position: relative;
     }
+    
     li::before {
       content: "▹";
-      color: #64ffda;
+      color: var(--highlight-color);
       position: absolute;
       left: -1.2em;
     }
+    
     a {
-      color: #64ffda;
+      color: var(--highlight-color);
       text-decoration: none;
       transition: all 0.3s ease;
     }
+    
     a:hover {
-      color: #a8ffeb;
+      color: var(--accent-color);
       text-decoration: underline;
     }
+    
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 20px;
       margin-top: 1.5em;
     }
+    
     .skill-category {
-      background: rgba(40, 38, 38, 0.5);
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
+      background: var(--item-bg);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 8px 32px var(--shadow-color);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      height: 100%;
     }
+    
+    .skill-category h3 {
+      color: var(--highlight-color);
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 1.1em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .skill-category h3 i {
+      font-size: 1.2em;
+    }
+    
     .skill-category:hover {
       transform: translateY(-5px);
     }
-    .skill-category h3 {
-      color: #64ffda;
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 1.1em;
+    
+    .skill-category ul {
+      padding-left: 0;
+      list-style-type: none;
     }
+    
+    .skill-category li {
+      margin-bottom: 8px;
+      padding-left: 1.5em;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    
+    .skill-category li::before {
+      content: none;
+    }
+    
+    .skill-icon {
+      margin-right: 8px;
+      width: 20px;
+      text-align: center;
+      color: var(--highlight-color);
+      flex-shrink: 0;
+    }
+    
     .education-item {
       margin-bottom: 2em;
-      padding-left: 1em;
+      padding-left: 1.5em;
+      padding-right: 1em;
+      padding-top: 1em;
+      padding-bottom: 1em;
+      border-left: 2px solid rgba(123, 104, 238, 0.3);
+      transition: all 0.3s ease;
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
+      background: var(--item-bg);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 8px 32px var(--shadow-color);
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+    
+    .dark-theme .education-item {
       border-left: 2px solid rgba(100, 255, 218, 0.3);
-      transition: border-left 0.3s ease;
     }
+    
     .education-item:hover {
-      border-left: 2px solid #64ffda;
+      border-left: 2px solid var(--accent-color);
+      transform: translateX(5px);
     }
+    
     .project-item {
       margin-bottom: 2em;
       padding: 1.5em;
-      background: rgba(40, 38, 38, 0.5);
-      border-radius: 8px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: var(--item-bg);
+      border-radius: var(--border-radius);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 8px 32px var(--shadow-color);
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
+    
     .project-item:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      box-shadow: 0 15px 35px var(--shadow-color);
     }
+    
+    .project-item h4 {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    
+    .project-item h4 i {
+      margin-right: 8px;
+      margin-top: 4px;
+    }
+    
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 20px;
       margin-top: 2em;
     }
+    
     .contact-item {
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 1.5em;
-      background: rgba(40, 38, 38, 0.5);
-      border-radius: 8px;
-      transition: transform 0.3s ease;
+      background: var(--item-bg);
+      border-radius: var(--border-radius);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 8px 32px var(--shadow-color);
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
+    
     .contact-item:hover {
       transform: translateY(-5px);
     }
+    
+    .contact-item p {
+      text-align: center;
+      word-break: break-word;
+    }
+    
+    .contact-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: var(--accent-color);
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    
+    .contact-item:hover .contact-icon {
+      transform: scale(1.1);
+    }
+    
+    .section-icon {
+      margin-right: 10px;
+      color: var(--highlight-color);
+      flex-shrink: 0;
+    }
+    
+    .interest-icon {
+      margin-right: 8px;
+      width: 24px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    
+    .education-icon {
+      margin-right: 10px;
+      color: var(--highlight-color);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      width: 20px;
+      text-align: center;
+    }
+    
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      margin-left: 15px;
+      cursor: pointer;
+      background: var(--item-bg);
+      padding: 5px 10px;
+      border-radius: 30px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 4px 12px var(--shadow-color);
+      transition: all 0.3s ease;
+    }
+    
+    .theme-toggle:hover {
+      box-shadow: 0 8px 20px var(--shadow-color);
+      transform: translateY(-2px);
+    }
+
+    .theme-toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+    }
+
+    .theme-toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .theme-toggle-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(255, 255, 255, 0.3);
+      transition: .4s;
+      border-radius: 24px;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .theme-toggle-slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    input:checked + .theme-toggle-slider {
+      background-color: var(--accent-color);
+    }
+
+    input:checked + .theme-toggle-slider:before {
+      transform: translateX(26px);
+    }
+
+    .theme-toggle-icon {
+      margin: 0 8px;
+      font-size: 16px;
+    }
+    
+    .interest-item {
+      background: var(--item-bg);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 8px 32px var(--shadow-color);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    
+    .interest-item h3 {
+      color: var(--highlight-color);
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    
+    .interest-description {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: var(--secondary-text);
+      line-height: 1.4;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      hyphens: auto;
+    }
+    
+    .interest-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px var(--shadow-color);
+    }
+    
+    .interest-bar {
+      height: 8px;
+      background-color: rgba(123, 104, 238, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 5px 0;
+    }
+    
+    .dark-theme .interest-bar {
+      background-color: rgba(100, 255, 218, 0.1);
+    }
+    
+    .interest-fill {
+      height: 100%;
+      background-color: var(--accent-color);
+      border-radius: 4px;
+      width: 0;
+      transition: width 1.5s ease-in-out;
+    }
+    
+    .course-category {
+      background: var(--item-bg);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 8px 32px var(--shadow-color);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-left: 3px solid var(--accent-color);
+    }
+    
+    .course-category:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px var(--shadow-color);
+    }
+    
+    .course-category h3 {
+      color: var(--highlight-color);
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 1.1em;
+    }
+    
     /* Responsive Design */
     @media (max-width: 768px) {
       .menu-icon {
@@ -297,11 +663,14 @@
         position: absolute;
         top: 60px;
         left: 0;
-        background-color: rgba(13, 10, 26, 0.95);
+        background-color: var(--nav-bg);
         z-index: 1;
         border-radius: 0px 0px 15px 15px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        box-shadow: 0 10px 20px var(--shadow-color);
         padding: 1em 0;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
       }
       .nav-links a {
         margin: 0.8em 0;
@@ -311,7 +680,7 @@
       }
       .close-btn {
         display: block;
-        color: #64ffda;
+        color: var(--accent-color);
         font-size: 24px;
         cursor: pointer;
         position: absolute;
@@ -320,7 +689,7 @@
       }
       .student-name {
         display: block;
-        color: #fff;
+        color: var(--nav-text);
         font-size: 18px;
         margin: 0 auto;
         font-weight: 600;
@@ -328,6 +697,43 @@
       section {
         padding: 2em;
         margin: 2em 1em;
+      }
+      .interests-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .coursework-grid, .skills-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      
+      h3 {
+        font-size: 1.2rem;
+      }
+      
+      h4 {
+        font-size: 1.1rem;
+      }
+      
+      .education-item p {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+      
+      .education-item p strong {
+        margin-left: 30px;
+        text-indent: -30px;
       }
     }
     @media (min-width: 769px) {
@@ -338,38 +744,46 @@
         display: none;
       }
     }
+    @media (max-width: 480px) {
+      section {
+        padding: 1.5em;
+        margin: 1.5em 0.5em;
+      }
+      
+      .profile-img {
+        width: 150px;
+        height: 150px;
+      }
+      
+      .tagline {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .tagline span {
+        margin: 5px 0;
+      }
+    }
     .interests-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 20px;
       margin-top: 30px;
     }
-    .interest-item {
-      background: rgba(40, 38, 38, 0.5);
-      padding: 15px 20px;
-      border-radius: 8px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .interest-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    }
-    .interest-item h3 {
-      color: #ccd6f6;
-      margin-top: 0;
-      margin-bottom: 12px;
-      font-size: 1rem;
-      font-weight: 500;
-    }
     .interest-bar {
       height: 6px;
-      background-color: rgba(100, 255, 218, 0.1);
+      background-color: rgba(123, 104, 238, 0.1);
       border-radius: 3px;
       overflow: hidden;
     }
+    
+    .dark-theme .interest-bar {
+      background-color: rgba(100, 255, 218, 0.1);
+    }
+    
     .interest-fill {
       height: 100%;
-      background-color: #64ffda;
+      background-color: var(--accent-color);
       border-radius: 3px;
       transition: width 1.5s ease-in-out;
       width: 0;
@@ -386,17 +800,17 @@
       margin-bottom: 15px;
     }
     .social-icon {
-      color: #8892b0;
+      color: var(--secondary-text);
       transition: all 0.3s ease;
     }
     .social-icon:hover {
-      color: #64ffda;
+      color: var(--accent-color);
       transform: translateY(-3px);
     }
     .footer-tagline {
       margin-top: 5px;
       font-size: 0.9em;
-      color: #8892b0;
+      color: var(--secondary-text);
     }
     .heart {
       color: #ff6b6b;
@@ -417,24 +831,34 @@
       gap: 20px;
       margin-top: 30px;
     }
-    .course-category {
-      background: rgba(40, 38, 38, 0.5);
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border-left: 3px solid rgba(100, 255, 218, 0.5);
+    .personal-social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 20px;
     }
-    .course-category:hover {
+    
+    .personal-social-icon {
+      color: var(--secondary-text);
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--item-bg);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 4px 15px var(--shadow-color);
+    }
+    
+    .personal-social-icon:hover {
+      color: var(--accent-color);
       transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-      border-left: 3px solid #64ffda;
-    }
-    .course-category h3 {
-      color: #64ffda;
-      margin-top: 0;
-      margin-bottom: 15px;
-      font-size: 1.1em;
+      box-shadow: 0 8px 25px var(--shadow-color);
     }
   </style>
 </head>
@@ -452,13 +876,21 @@
     <span class="student-name">Tathagata Das</span></span>
     <div class="nav-links" id="navLinks">
       <!-- <span class="close-btn" onclick="toggleMenu()">✖</span> -->
-      <a href="#personal-info" onclick="toggleMenu()">Personal Info</a>
-      <a href="#research-interests" onclick="toggleMenu()">Research Interests</a>
-      <a href="#education" onclick="toggleMenu()">Education</a>
-      <a href="#coursework" onclick="toggleMenu()">Coursework</a>
-      <a href="#skills" onclick="toggleMenu()">Skills</a>
-      <a href="#projects" onclick="toggleMenu()">Projects</a>
-      <a href="#contacts" onclick="toggleMenu()">Contacts</a>
+      <a href="#personal-info" onclick="toggleMenu()"><i class="fas fa-user"></i> Personal Info</a>
+      <a href="#research-interests" onclick="toggleMenu()"><i class="fas fa-flask"></i> Research Interests</a>
+      <a href="#skills" onclick="toggleMenu()"><i class="fas fa-tools"></i> Skills</a>
+      <a href="#education" onclick="toggleMenu()"><i class="fas fa-graduation-cap"></i> Education</a>
+      <a href="#coursework" onclick="toggleMenu()"><i class="fas fa-book"></i> Coursework</a>
+      <a href="#projects" onclick="toggleMenu()"><i class="fas fa-project-diagram"></i> Projects</a>
+      <a href="#contacts" onclick="toggleMenu()"><i class="fas fa-address-book"></i> Contacts</a>
+    </div>
+    <div class="theme-toggle">
+      <span class="theme-toggle-icon">☀️</span>
+      <label class="theme-toggle-switch">
+        <input type="checkbox" id="theme-toggle-input">
+        <span class="theme-toggle-slider"></span>
+      </label>
+      <span class="theme-toggle-icon">🌙</span>
     </div>
   </nav>
 
@@ -468,144 +900,190 @@
         <img src="MSC22403.png" alt="Profile Picture" class="profile-img">
         <div class="profile-glow"></div>
       </div>
-      <h2><a href="" target="_blank" style="color: inherit; text-decoration: none;">Tathagata Das</a></h2>
+      <h2><i class="fas fa-user-circle section-icon"></i><a href="" target="_blank" style="color: inherit; text-decoration: none;">Tathagata Das</a></h2>
       <div class="tagline">
-        <span class="highlight">Physics</span> • <span class="highlight">Biomedical Imaging</span> • <span class="highlight">Research</span>
+        <span class="highlight"><i class="fas fa-atom"></i> Physics</span> • 
+        <span class="highlight"><i class="fas fa-microscope"></i> Biomedical Imaging</span> • 
+        <span class="highlight"><i class="fas fa-search"></i> Research</span>
       </div>
       <div class="bio">
         <p>I hold an MSc in Physics with a focus on biomedical imaging, having completed a significant project in this field. I am now seeking a PhD position to further my research and expertise in biomedical imaging.</p>
+      </div>
+      <div class="personal-social-icons">
+        <a href="https://www.linkedin.com/in/tathagatalinked/" target="_blank" class="personal-social-icon">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/addressspace" target="_blank" class="personal-social-icon">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:tathagatadasworkspace@gmail.com" class="personal-social-icon">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://scholar.google.com/citations?hl=en&user=rdoAiwkAAAAJ" target="_blank" class="personal-social-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </a>
       </div>
     </div>
   </section>
 
   <section id="research-interests" class="justified-text">
-    <h2>Research Interests</h2>
+    <h2><i class="fas fa-flask section-icon"></i>Research Interests</h2>
     
     <div class="interests-grid">
       <div class="interest-item">
-        <h3>Ultrasound Imaging</h3>
-        <div class="interest-bar"><div class="interest-fill" style="width: 90%"></div></div>
+        <h3><i class="fas fa-wave-square interest-icon"></i>Photoacoustic Tomography (PAT)</h3>
+        <div class="interest-bar"><div class="interest-fill" data-width="95%"></div></div>
+        <p class="interest-description">Advanced imaging technique combining optical excitation with ultrasonic detection for deep tissue imaging.</p>
       </div>
       <div class="interest-item">
-        <h3>Photoacoustic Tomography (PAT)</h3>
-        <div class="interest-bar"><div class="interest-fill" style="width: 95%"></div></div>
+        <h3><i class="fas fa-broadcast-tower interest-icon"></i>Ultrasound Imaging</h3>
+        <div class="interest-bar"><div class="interest-fill" data-width="90%"></div></div>
+        <p class="interest-description">Non-invasive diagnostic imaging using high-frequency sound waves to visualize internal body structures.</p>
       </div>
       <div class="interest-item">
-        <h3>Photoacoustic Microscopy (PAM)</h3>
-        <div class="interest-bar"><div class="interest-fill" style="width: 85%"></div></div>
+        <h3><i class="fas fa-microscope interest-icon"></i>Photoacoustic Microscopy (PAM)</h3>
+        <div class="interest-bar"><div class="interest-fill" data-width="85%"></div></div>
+        <p class="interest-description">High-resolution optical absorption-based microscopic imaging for biological tissues.</p>
       </div>
       <div class="interest-item">
-        <h3>Medical Image Analysis</h3>
-        <div class="interest-bar"><div class="interest-fill" style="width: 80%"></div></div>
+        <h3><i class="fas fa-brain interest-icon"></i>Machine Learning/Deep Learning</h3>
+        <div class="interest-bar"><div class="interest-fill" data-width="85%"></div></div>
+        <p class="interest-description">Application of neural networks and AI algorithms to enhance medical image processing and analysis.</p>
       </div>
       <div class="interest-item">
-        <h3>Medical Instrumentation</h3>
-        <div class="interest-bar"><div class="interest-fill" style="width: 75%"></div></div>
+        <h3><i class="fas fa-x-ray interest-icon"></i>Medical Image Analysis</h3>
+        <div class="interest-bar"><div class="interest-fill" data-width="80%"></div></div>
+        <p class="interest-description">Computational techniques for extracting meaningful information from medical images.</p>
       </div>
       <div class="interest-item">
-        <h3>Machine Learning/Deep Learning</h3>
-        <div class="interest-bar"><div class="interest-fill" style="width: 85%"></div></div>
+        <h3><i class="fas fa-stethoscope interest-icon"></i>Medical Instrumentation</h3>
+        <div class="interest-bar"><div class="interest-fill" data-width="75%"></div></div>
+        <p class="interest-description">Design and development of specialized equipment for medical diagnostics and treatment.</p>
       </div>
       <div class="interest-item">
-        <h3>Physics-Informed Neural Network</h3>
-        <div class="interest-bar"><div class="interest-fill" style="width: 70%"></div></div>
+        <h3><i class="fas fa-network-wired interest-icon"></i>Physics-Informed Neural Network</h3>
+        <div class="interest-bar"><div class="interest-fill" data-width="70%"></div></div>
+        <p class="interest-description">Neural networks that incorporate physical laws into their architecture for more accurate predictions.</p>
       </div>
       <div class="interest-item">
-        <h3>Magnetic Resonance Imaging (MRI)</h3>
-        <div class="interest-bar"><div class="interest-fill" style="width: 65%"></div></div>
+        <h3><i class="fas fa-magnet interest-icon"></i>Magnetic Resonance Imaging (MRI)</h3>
+        <div class="interest-bar"><div class="interest-fill" data-width="65%"></div></div>
+        <p class="interest-description">Non-invasive imaging technique using magnetic fields and radio waves to visualize anatomical structures.</p>
       </div>
       <div class="interest-item">
-        <h3>Cloud Computing</h3>
-        <div class="interest-bar"><div class="interest-fill" style="width: 60%"></div></div>
-      </div>
-      <div class="interest-item">
-        <h3>Quantum Information Theory</h3>
-        <div class="interest-bar"><div class="interest-fill" style="width: 75%"></div></div>
+        <h3><i class="fas fa-cloud interest-icon"></i>Cloud Computing</h3>
+        <div class="interest-bar"><div class="interest-fill" data-width="60%"></div></div>
+        <p class="interest-description">Leveraging distributed computing resources for processing large medical imaging datasets.</p>
       </div>
     </div>
   </section>
 
   <section id="skills">
-    <h2>Skills</h2>
+    <h2><i class="fas fa-tools section-icon"></i>Skills</h2>
+    
     <div class="skills-grid">
       <div class="skill-category">
-        <h3>Programming</h3>
+        <h3><i class="fas fa-microscope"></i> Research & Analysis</h3>
         <ul>
-          <li>C</li>
-          <li>MATLAB</li>
-          <li>Python</li>
+          <li><i class="skill-icon fas fa-wave-square"></i>Photoacoustic Imaging</li>
+          <li><i class="skill-icon fas fa-broadcast-tower"></i>Ultrasound Imaging</li>
+          <li><i class="skill-icon fas fa-chart-line"></i>Data Analysis</li>
+          <li><i class="skill-icon fas fa-cogs"></i>Signal Processing</li>
+          <li><i class="skill-icon fas fa-camera"></i>Image Processing</li>
         </ul>
       </div>
+      
       <div class="skill-category">
-        <h3>Web Development</h3>
+        <h3><i class="fas fa-code"></i> Programming</h3>
         <ul>
-          <li>JavaScript</li>
-          <li>PHP</li>
-          <li>Flask</li>
-          <li>HTML</li>
-          <li>CSS</li>
+          <li><i class="skill-icon fab fa-python"></i>Python</li>
+          <li><i class="skill-icon fas fa-calculator"></i>MATLAB</li>
+          <li><i class="skill-icon fas fa-copyright"></i>C</li>
         </ul>
       </div>
+      
       <div class="skill-category">
-        <h3>Machine Learning</h3>
+        <h3><i class="fas fa-brain"></i> Machine Learning</h3>
         <ul>
-          <li>PyTorch</li>
+          <li><i class="skill-icon fab fa-python"></i>PyTorch</li>
+          <li><i class="skill-icon fas fa-network-wired"></i>Neural Networks</li>
+          <li><i class="skill-icon fas fa-project-diagram"></i>Deep Learning</li>
         </ul>
       </div>
+      
       <div class="skill-category">
-        <h3>Tools & Systems</h3>
+        <h3><i class="fas fa-laptop-code"></i> Tools & Systems</h3>
         <ul>
-          <li>Windows</li>
-          <li>Linux</li>
-          <li>k-Wave MATLAB toolbox</li>
-          <li>MS Office Suite</li>
-          <li>HPC</li>
-          <li>Cloud Computing</li>
+          <li><i class="skill-icon fas fa-wave-square"></i>k-Wave MATLAB toolbox</li>
+          <li><i class="skill-icon fas fa-server"></i>HPC</li>
+          <li><i class="skill-icon fas fa-cloud"></i>Cloud Computing</li>
+          <li><i class="skill-icon fab fa-linux"></i>Linux</li>
+          <li><i class="skill-icon fab fa-windows"></i>Windows</li>
+        </ul>
+      </div>
+      
+      <div class="skill-category">
+        <h3><i class="fas fa-globe"></i> Web Development</h3>
+        <ul>
+          <li><i class="skill-icon fab fa-html5"></i>HTML</li>
+          <li><i class="skill-icon fab fa-css3-alt"></i>CSS</li>
+          <li><i class="skill-icon fab fa-js"></i>JavaScript</li>
+          <li><i class="skill-icon fab fa-php"></i>PHP</li>
+          <li><i class="skill-icon fab fa-flask"></i>Flask</li>
+        </ul>
+      </div>
+      
+      <div class="skill-category">
+        <h3><i class="fas fa-tasks"></i> Other Skills</h3>
+        <ul>
+          <li><i class="skill-icon far fa-file-word"></i>MS Office Suite</li>
+          <li><i class="skill-icon fas fa-chalkboard-teacher"></i>Technical Writing</li>
+          <li><i class="skill-icon fas fa-comments"></i>Scientific Communication</li>
         </ul>
       </div>
     </div>
   </section>
 
   <section id="education">
-    <h2>Education</h2>
+    <h2><i class="fas fa-graduation-cap section-icon"></i>Education</h2>
     
     <div class="education-item">
-      <p><strong>School of Physics, Indian Institute of Science Education and Research, Thiruvananthapuram</strong></p>
-      <p>Master of Science </p>
-      <p>Aug 2022 - June 2024</p>
+      <p><i class="fas fa-university education-icon"></i><strong>School of Physics, Indian Institute of Science Education and Research, Thiruvananthapuram</strong></p>
+      <p><i class="fas fa-graduation-cap education-icon"></i>Master of Science </p>
+      <p><i class="far fa-calendar-alt education-icon"></i>Aug 2022 - June 2024</p>
     </div>
 
     <div class="education-item">
-      <p><strong>Department of Physics, Ramakrishna Mission Vivekananda Centenary College, Rahara, Kolkata</strong></p>
-      <p>Bachelor of Science</p>
-      <p>July 2019 - June 2022</p>
+      <p><i class="fas fa-university education-icon"></i><strong>Department of Physics, Ramakrishna Mission Vivekananda Centenary College, Rahara, Kolkata</strong></p>
+      <p><i class="fas fa-graduation-cap education-icon"></i>Bachelor of Science</p>
+      <p><i class="far fa-calendar-alt education-icon"></i>July 2019 - June 2022</p>
     </div>
 
     <div class="education-item">
-      <p><strong>Science Stream, Egra J L High School, Egra, Purba Medinipur</strong></p>
-      <p>Senior Secondary Education</p>
-      <p>Jun 2017 - May 2019</p>
+      <p><i class="fas fa-school education-icon"></i><strong>Science Stream, Egra J L High School, Egra, Purba Medinipur</strong></p>
+      <p><i class="fas fa-user-graduate education-icon"></i>Senior Secondary Education</p>
+      <p><i class="far fa-calendar-alt education-icon"></i>Jun 2017 - May 2019</p>
     </div>
 
     <div class="education-item">
-      <p><strong>Basic Science Arts Language, Panchrol High School, Panchrol, Purba Medinipur</strong></p>
-      <p>Secondary Education</p>
-      <p>Jun 2015 - May 2017</p>
+      <p><i class="fas fa-school education-icon"></i><strong>Basic Science Arts Language, Panchrol High School, Panchrol, Purba Medinipur</strong></p>
+      <p><i class="fas fa-user-graduate education-icon"></i>Secondary Education</p>
+      <p><i class="far fa-calendar-alt education-icon"></i>Jun 2015 - May 2017</p>
     </div>
   </section>
 
   <section id="coursework">
-    <h2>Coursework</h2>
+    <h2><i class="fas fa-book section-icon"></i>Coursework</h2>
     <div class="coursework-grid">
       <div class="course-category">
-        <h3>Imaging & Signal Processing</h3>
+        <h3><i class="fas fa-camera"></i> Imaging & Signal Processing</h3>
         <ul>
           <li>Principles of Digital Imaging</li>
           <li>Digital Image Processing</li>
         </ul>
       </div>
       <div class="course-category">
-        <h3>Mathematics & Computation</h3>
+        <h3><i class="fas fa-square-root-alt"></i> Mathematics & Computation</h3>
         <ul>
           <li>Mathematical Methods in Physics</li>
           <li>Statistical and Data Analysis Methods</li>
@@ -613,21 +1091,21 @@
         </ul>
       </div>
       <div class="course-category">
-        <h3>Quantum Physics</h3>
+        <h3><i class="fas fa-atom"></i> Quantum Physics</h3>
         <ul>
           <li>Quantum Information Theory</li>
           <li>Quantum Mechanics and Applications</li>
         </ul>
       </div>
       <div class="course-category">
-        <h3>Electronics & Systems</h3>
+        <h3><i class="fas fa-microchip"></i> Electronics & Systems</h3>
         <ul>
           <li>Analogue Systems and Applications</li>
           <li>Digital Systems and Applications</li>
         </ul>
       </div>
       <div class="course-category">
-        <h3>Core Physics</h3>
+        <h3><i class="fas fa-meteor"></i> Core Physics</h3>
         <ul>
           <li>Wave and Optics</li>
           <li>Statistical Mechanics</li>
@@ -635,7 +1113,7 @@
         </ul>
       </div>
       <div class="course-category">
-        <h3>Communication</h3>
+        <h3><i class="fas fa-comments"></i> Communication</h3>
         <ul>
           <li>English Communication</li>
         </ul>
@@ -644,52 +1122,60 @@
   </section>
 
   <section id="projects">
-    <h2>Projects</h2>
+    <h2><i class="fas fa-project-diagram section-icon"></i>Projects</h2>
     
     <div class="project-item">
-      <h4>Fast Adaptive U-Net (FAU-Net): Novel Deep-Learning Network for Photoacoustic Imaging (PAI)</h4>
-      <p><strong>BnBEng.LAB, IISER TVM</strong></p>
-      <p><strong>Supervisor:</strong> Dr. Mayanglambam Suheshkumar Singh, Associate Professor, IISER Thiruvananthapuram</p>
-      <p><strong>Experiences:</strong></p>
+      <h4><i class="fas fa-network-wired"></i> Fast Adaptive U-Net (FAU-Net): Novel Deep-Learning Network for Photoacoustic Imaging (PAI)</h4>
+      <p><strong><i class="fas fa-building"></i> BnBEng.LAB, IISER TVM</strong></p>
+      <p><strong><i class="fas fa-user-tie"></i> Supervisor:</strong> Dr. Mayanglambam Suheshkumar Singh, Associate Professor, IISER Thiruvananthapuram</p>
+      <p><strong><i class="fas fa-tasks"></i> Experiences:</strong></p>
       <ul>
-        <li>Handling laser</li>
-        <li>Acquiring data from a home-built photoacoustic imaging setup</li>
-        <li>Analyzing raw transducer data</li>
-        <li>Beamforming</li>
-        <li>Processing data</li>
-        <li>Applying reconstruction algorithms</li>
-        <li>Implementing deep learning techniques</li>
+        <li><i class="fas fa-laser"></i> Handling laser</li>
+        <li><i class="fas fa-camera"></i> Acquiring data from a home-built photoacoustic imaging setup</li>
+        <li><i class="fas fa-chart-line"></i> Analyzing raw transducer data</li>
+        <li><i class="fas fa-broadcast-tower"></i> Beamforming</li>
+        <li><i class="fas fa-cogs"></i> Processing data</li>
+        <li><i class="fas fa-code"></i> Applying reconstruction algorithms</li>
+        <li><i class="fas fa-brain"></i> Implementing deep learning techniques</li>
       </ul>
-      <p><strong>Duration:</strong> Jul 2023 – Jan 2024</p>
+      <p><strong><i class="far fa-calendar-alt"></i> Duration:</strong> Jul 2023 – Jan 2024</p>
     </div>
     
     <div class="project-item">
-      <h4>Deep Learning-Powered Focus Stabilization in Light Sheet Microscopy</h4>
-      <p><strong>BnBEng.LAB, IISER TVM</strong></p>
-      <p><strong>Supervisor:</strong> Dr. Mayanglambam Suheshkumar Singh, Associate Professor, IISER Thiruvananthapuram</p>
-      <p><strong>Experiences:</strong></p>
+      <h4><i class="fas fa-microscope"></i> Deep Learning-Powered Focus Stabilization in Light Sheet Microscopy</h4>
+      <p><strong><i class="fas fa-building"></i> BnBEng.LAB, IISER TVM</strong></p>
+      <p><strong><i class="fas fa-user-tie"></i> Supervisor:</strong> Dr. Mayanglambam Suheshkumar Singh, Associate Professor, IISER Thiruvananthapuram</p>
+      <p><strong><i class="fas fa-tasks"></i> Experiences:</strong></p>
       <ul>
-        <li>Acquiring data from Light Sheet Microscopy</li>
-        <li>Implementing deep learning techniques</li>
+        <li><i class="fas fa-camera"></i> Acquiring data from Light Sheet Microscopy</li>
+        <li><i class="fas fa-brain"></i> Implementing deep learning techniques</li>
       </ul>
-      <p><strong>Duration:</strong> Feb 2024 – Ongoing</p>
+      <p><strong><i class="far fa-calendar-alt"></i> Duration:</strong> Feb 2024 – Ongoing</p>
     </div>
   </section>
 
   <section id="contacts">
-    <h2>Contacts</h2>
+    <h2><i class="fas fa-address-book section-icon"></i>Contacts</h2>
     <div class="contact-grid">
       <div class="contact-item">
+        <i class="fas fa-envelope contact-icon"></i>
         <h4>Email</h4>
         <p>tathagatadasworkspace@gmail.com</p>
       </div>
       <div class="contact-item">
+        <i class="fab fa-linkedin contact-icon"></i>
         <h4>LinkedIn</h4>
         <p><a href="https://www.linkedin.com/in/tathagatalinked/" target="_blank">tathagatalinked</a></p>
       </div>
       <div class="contact-item">
+        <i class="fab fa-github contact-icon"></i>
         <h4>GitHub</h4>
         <p><a href="https://github.com/addressspace" target="_blank">addressspace</a></p>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-graduation-cap contact-icon"></i>
+        <h4>Google Scholar</h4>
+        <p><a href="https://scholar.google.com/citations?hl=en&user=rdoAiwkAAAAJ" target="_blank">View Profile</a></p>
       </div>
     </div>
   </section>
@@ -698,13 +1184,16 @@
     <div class="footer-content">
       <div class="social-icons">
         <a href="https://www.linkedin.com/in/tathagatalinked/" target="_blank" class="social-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          <i class="fab fa-linkedin fa-lg"></i>
         </a>
         <a href="https://github.com/addressspace" target="_blank" class="social-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          <i class="fab fa-github fa-lg"></i>
         </a>
         <a href="mailto:tathagatadasworkspace@gmail.com" class="social-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <i class="fas fa-envelope fa-lg"></i>
+        </a>
+        <a href="https://scholar.google.com/citations?hl=en&user=rdoAiwkAAAAJ" target="_blank" class="social-icon">
+          <i class="fas fa-graduation-cap fa-lg"></i>
         </a>
       </div>
       <p>&copy; 2024 Tathagata Das. All Rights Reserved.</p>
@@ -750,6 +1239,27 @@
       });
     });
     
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle-input');
+    
+    // Check for saved theme preference or use default (light)
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-theme');
+      themeToggle.checked = true;
+    }
+    
+    // Toggle theme when switch is clicked
+    themeToggle.addEventListener('change', function() {
+      if (this.checked) {
+        document.body.classList.add('dark-theme');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.body.classList.remove('dark-theme');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+    
     // Add scroll reveal effects
     window.addEventListener('scroll', function() {
       const sections = document.querySelectorAll('section');
@@ -765,11 +1275,16 @@
           if (section.id === 'research-interests') {
             const interestFills = section.querySelectorAll('.interest-fill');
             interestFills.forEach(fill => {
-              const targetWidth = fill.style.width;
+              // Reset to 0 width
               fill.style.width = '0';
-              setTimeout(() => {
-                fill.style.width = targetWidth;
-              }, 100);
+              
+              // Force reflow to ensure animation works
+              void fill.offsetWidth;
+              
+              // Animate to target width
+              const targetWidth = fill.getAttribute('data-width');
+              fill.style.transition = 'width 1.5s ease-in-out';
+              fill.style.width = targetWidth;
             });
           }
         }
@@ -783,6 +1298,12 @@
         section.style.opacity = '0';
         section.style.transform = 'translateY(20px)';
         section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      });
+      
+      // Set initial width for interest bars to 0
+      const interestFills = document.querySelectorAll('.interest-fill');
+      interestFills.forEach(fill => {
+        fill.style.width = '0';
       });
       
       // Trigger scroll event to reveal visible sections
