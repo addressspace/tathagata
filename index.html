@@ -138,50 +138,6 @@
       justify-content: center;
     }
     
-    /* Tab styling */
-    .tab-content {
-      display: none;
-    }
-    
-    .tab-content.active {
-      display: block;
-    }
-    
-    .tab-button {
-      color: var(--nav-text);
-      background: none;
-      border: none;
-      padding: 10px 15px;
-      margin: 0 5px;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 500;
-      font-size: 1em;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      position: relative;
-      outline: none;
-    }
-    
-    .tab-button::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: var(--accent-color);
-      transition: width 0.3s ease;
-    }
-    
-    .tab-button:hover::after,
-    .tab-button.active::after {
-      width: 100%;
-    }
-    
-    .tab-button.active {
-      color: var(--accent-color);
-    }
-    
     section {
       color: var(--text-color);
       padding: 3em;
@@ -541,8 +497,8 @@
     }
     
     .theme-toggle:hover {
+      box-shadow: 0 8px 20px var(--shadow-color);
       transform: translateY(-2px);
-      box-shadow: 0 8px 16px var(--shadow-color);
     }
 
     .theme-toggle-switch {
@@ -904,260 +860,12 @@
       transform: translateY(-5px);
       box-shadow: 0 8px 25px var(--shadow-color);
     }
-
-    /* Research Projects Tab Styles */
-    #researchprojects header {
+    .projects-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px var(--shadow-color);
       background-color: var(--accent-color);
       color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-      margin-bottom: 2rem;
-      border-radius: var(--border-radius);
-    }
-    
-    #researchprojects header h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    #researchprojects header h2 {
-      font-size: 1.5rem;
-      font-weight: normal;
-      color: white;
-    }
-    
-    .project {
-      background-color: var(--section-bg);
-      border-radius: var(--border-radius);
-      box-shadow: 0 2px 10px var(--shadow-color);
-      margin-bottom: 3rem;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px var(--shadow-color);
-    }
-    
-    .project-header {
-      background-color: var(--accent-color);
-      color: white;
-      padding: 1.5rem;
-      text-align: center;
-    }
-    
-    .project-header h2 {
-      color: white;
-      border-bottom: none;
-      margin-bottom: 0.5rem;
-    }
-    
-    .project-content {
-      padding: 2rem;
-    }
-    
-    .authors {
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-    
-    .affiliations {
-      font-style: italic;
-      text-align: center;
-      margin-bottom: 20px;
-      color: var(--secondary-text);
-      font-size: 0.9rem;
-    }
-    
-    .project-description {
-      margin-bottom: 2rem;
-      text-align: justify;
-    }
-    
-    .publication-info {
-      background-color: var(--item-bg);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: var(--border-radius);
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-    }
-    
-    .publication-info p {
-      margin-bottom: 0.5rem;
-    }
-    
-    .figures-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 2rem;
-    }
-    
-    .figure-item {
-      background-color: var(--item-bg);
-      border-radius: var(--border-radius);
-      box-shadow: 0 2px 10px var(--shadow-color);
-      overflow: hidden;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-    
-    .figure-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px var(--shadow-color);
-    }
-    
-    .figure-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: contain;
-    }
-    
-    .figure-caption {
-      padding: 1.5rem;
-    }
-    
-    .figure-caption h3 {
-      color: var(--highlight-color);
-      margin-bottom: 0.8rem;
-      font-size: 1.3rem;
-    }
-    
-    .figure-caption p {
-      font-size: 1.05rem;
-    }
-    
-    .references {
-      background-color: var(--item-bg);
-      padding: 1.5rem;
-      border-radius: var(--border-radius);
-      margin-top: 2rem;
-    }
-    
-    .references h3 {
-      color: var(--highlight-color);
-      margin-bottom: 1rem;
-    }
-    
-    .references ol {
-      padding-left: 2rem;
-    }
-    
-    .references li {
-      margin-bottom: 0.8rem;
-      font-size: 0.95rem;
-    }
-    
-    .back-to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: var(--accent-color);
-      color: white;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       text-decoration: none;
-      opacity: 0;
-      transition: opacity 0.3s;
-      box-shadow: 0 2px 5px var(--shadow-color);
-      z-index: 1000;
-    }
-    
-    .back-to-top.visible {
-      opacity: 1;
-    }
-    
-    .back-to-top:hover {
-      background-color: var(--highlight-color);
-    }
-    
-    .project-divider {
-      height: 3px;
-      background: linear-gradient(to right, transparent, var(--accent-color), transparent);
-      margin: 4rem 0;
-    }
-    
-    .table-of-contents {
-      background-color: var(--section-bg);
-      padding: 1.5rem;
-      border-radius: var(--border-radius);
-      box-shadow: 0 2px 10px var(--shadow-color);
-      margin-bottom: 2rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .table-of-contents:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px var(--shadow-color);
-    }
-    
-    .table-of-contents h3 {
-      color: var(--highlight-color);
-      margin-bottom: 1rem;
-    }
-    
-    .table-of-contents ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-    
-    .table-of-contents li {
-      margin-bottom: 0.5rem;
-    }
-    
-    .table-of-contents a {
-      color: var(--text-color);
-      text-decoration: none;
-      transition: color 0.3s ease;
-      display: inline-block;
-      padding: 5px 0;
-    }
-    
-    .table-of-contents a:hover {
-      color: var(--highlight-color);
-    }
-    
-    .table-of-contents li::before {
-      content: "▹";
-      color: var(--highlight-color);
-      margin-right: 8px;
-    }
-    
-    /* Dark theme adjustments for research projects */
-    .dark-theme #researchprojects header {
-      background-color: var(--accent-color);
-    }
-    
-    .dark-theme .project-header {
-      background-color: var(--accent-color);
-    }
-    
-    .dark-theme .project-divider {
-      background: linear-gradient(to right, transparent, var(--accent-color), transparent);
-    }
-    
-    /* Responsive styles for research projects */
-    @media (max-width: 768px) {
-      .figures-container {
-        grid-template-columns: 1fr;
-      }
-      
-      #researchprojects header h1 {
-        font-size: 1.8rem;
-      }
-      
-      #researchprojects header h2 {
-        font-size: 1.2rem;
-      }
-      
-      .project-content {
-        padding: 1.5rem;
-      }
     }
   </style>
 </head>
@@ -1167,470 +875,339 @@
 
 
   <nav>
-    <div class="logo">
-      <a href="#" id="home-link">Tathagata Das</a>
+    <div class="menu-icon" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-    <div class="nav-links">
-      <button class="tab-button active" data-tab="personaldetails">Personal Details</button>
-      <button class="tab-button" data-tab="researchprojects">Research Projects</button>
+    <span class="student-name">Tathagata Das</span></span>
+    <div class="nav-links" id="navLinks">
+      <!-- <span class="close-btn" onclick="toggleMenu()">✖</span> -->
+      <a href="#personal-info" onclick="toggleMenu()"><i class="fas fa-user"></i> Personal Info</a>
+      <a href="#research-interests" onclick="toggleMenu()"><i class="fas fa-flask"></i> Research Interests</a>
+      <a href="#skills" onclick="toggleMenu()"><i class="fas fa-tools"></i> Skills</a>
+      <a href="#education" onclick="toggleMenu()"><i class="fas fa-graduation-cap"></i> Education</a>
+      <a href="#coursework" onclick="toggleMenu()"><i class="fas fa-book"></i> Coursework</a>
+      <a href="#projects" onclick="toggleMenu()"><i class="fas fa-project-diagram"></i> Projects</a>
+      <a href="#contacts" onclick="toggleMenu()"><i class="fas fa-address-book"></i> Contacts</a>
     </div>
-    <div class="theme-toggle" id="theme-toggle">
-      <i class="fas fa-moon"></i>
+    <div class="theme-toggle">
+      <span class="theme-toggle-icon">☀️</span>
+      <label class="theme-toggle-switch">
+        <input type="checkbox" id="theme-toggle-input">
+        <span class="theme-toggle-slider"></span>
+      </label>
+      <span class="theme-toggle-icon">🌙</span>
     </div>
   </nav>
 
-  <!-- Personal Details Tab Content -->
-  <div id="personaldetails" class="tab-content active">
-    <section id="about">
-      <div class="container">
-        <div class="profile-container">
-          <img src="MSC22403.png" alt="Tathagata Das" class="profile-img">
-          <div class="profile-glow"></div>
-        </div>
-        <h2><i class="fas fa-user section-icon"></i>About Me</h2>
-        <p class="tagline">PhD Student in <span class="highlight">Biomedical Engineering</span></p>
-        <p class="bio justified-text">
-          I am a PhD student in Biomedical Engineering at the University of California, Davis. My research focuses on developing novel optical imaging techniques for biomedical applications. I am particularly interested in computational imaging, machine learning, and image processing for medical diagnostics.
-        </p>
-      </div>
-    </section>
-
-    <section id="research-interests" class="justified-text">
-      <h2><i class="fas fa-flask section-icon"></i>Research Interests</h2>
-      
-      <div class="interests-grid">
-        <div class="interest-item">
-          <h3><i class="fas fa-wave-square interest-icon"></i>Photoacoustic Tomography (PAT)</h3>
-          <div class="interest-bar"><div class="interest-fill" data-width="95%"></div></div>
-          <p class="interest-description">Advanced imaging technique combining optical excitation with ultrasonic detection for deep tissue imaging.</p>
-        </div>
-        <div class="interest-item">
-          <h3><i class="fas fa-broadcast-tower interest-icon"></i>Ultrasound Imaging</h3>
-          <div class="interest-bar"><div class="interest-fill" data-width="90%"></div></div>
-          <p class="interest-description">Non-invasive diagnostic imaging using high-frequency sound waves to visualize internal body structures.</p>
-        </div>
-        <div class="interest-item">
-          <h3><i class="fas fa-microscope interest-icon"></i>Photoacoustic Microscopy (PAM)</h3>
-          <div class="interest-bar"><div class="interest-fill" data-width="85%"></div></div>
-          <p class="interest-description">High-resolution optical absorption-based microscopic imaging for biological tissues.</p>
-        </div>
-        <div class="interest-item">
-          <h3><i class="fas fa-brain interest-icon"></i>Machine Learning/Deep Learning</h3>
-          <div class="interest-bar"><div class="interest-fill" data-width="85%"></div></div>
-          <p class="interest-description">Application of neural networks and AI algorithms to enhance medical image processing and analysis.</p>
-        </div>
-        <div class="interest-item">
-          <h3><i class="fas fa-x-ray interest-icon"></i>Medical Image Analysis</h3>
-          <div class="interest-bar"><div class="interest-fill" data-width="80%"></div></div>
-          <p class="interest-description">Computational techniques for extracting meaningful information from medical images.</p>
-        </div>
-        <div class="interest-item">
-          <h3><i class="fas fa-stethoscope interest-icon"></i>Medical Instrumentation</h3>
-          <div class="interest-bar"><div class="interest-fill" data-width="75%"></div></div>
-          <p class="interest-description">Design and development of specialized equipment for medical diagnostics and treatment.</p>
-        </div>
-        <div class="interest-item">
-          <h3><i class="fas fa-network-wired interest-icon"></i>Physics-Informed Neural Network</h3>
-          <div class="interest-bar"><div class="interest-fill" data-width="70%"></div></div>
-          <p class="interest-description">Neural networks that incorporate physical laws into their architecture for more accurate predictions.</p>
-        </div>
-        <div class="interest-item">
-          <h3><i class="fas fa-magnet interest-icon"></i>Magnetic Resonance Imaging (MRI)</h3>
-          <div class="interest-bar"><div class="interest-fill" data-width="65%"></div></div>
-          <p class="interest-description">Non-invasive imaging technique using magnetic fields and radio waves to visualize anatomical structures.</p>
-        </div>
-        <div class="interest-item">
-          <h3><i class="fas fa-cloud interest-icon"></i>Cloud Computing</h3>
-          <div class="interest-bar"><div class="interest-fill" data-width="60%"></div></div>
-          <p class="interest-description">Leveraging distributed computing resources for processing large medical imaging datasets.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills">
-      <h2><i class="fas fa-tools section-icon"></i>Skills</h2>
-      
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h3><i class="fas fa-microscope"></i> Research & Analysis</h3>
-          <ul>
-            <li><i class="skill-icon fas fa-wave-square"></i>Photoacoustic Imaging</li>
-            <li><i class="skill-icon fas fa-broadcast-tower"></i>Ultrasound Imaging</li>
-            <li><i class="skill-icon fas fa-chart-line"></i>Data Analysis</li>
-            <li><i class="skill-icon fas fa-cogs"></i>Signal Processing</li>
-            <li><i class="skill-icon fas fa-camera"></i>Image Processing</li>
-          </ul>
-        </div>
-        
-        <div class="skill-category">
-          <h3><i class="fas fa-code"></i> Programming</h3>
-          <ul>
-            <li><i class="skill-icon fab fa-python"></i>Python</li>
-            <li><i class="skill-icon fas fa-calculator"></i>MATLAB</li>
-            <li><i class="skill-icon fas fa-copyright"></i>C</li>
-          </ul>
-        </div>
-        
-        <div class="skill-category">
-          <h3><i class="fas fa-brain"></i> Machine Learning</h3>
-          <ul>
-            <li><i class="skill-icon fab fa-python"></i>PyTorch</li>
-            <li><i class="skill-icon fas fa-network-wired"></i>Neural Networks</li>
-            <li><i class="skill-icon fas fa-project-diagram"></i>Deep Learning</li>
-          </ul>
-        </div>
-        
-        <div class="skill-category">
-          <h3><i class="fas fa-laptop-code"></i> Tools & Systems</h3>
-          <ul>
-            <li><i class="skill-icon fas fa-wave-square"></i>k-Wave MATLAB toolbox</li>
-            <li><i class="skill-icon fas fa-server"></i>HPC</li>
-            <li><i class="skill-icon fas fa-cloud"></i>Cloud Computing</li>
-            <li><i class="skill-icon fab fa-linux"></i>Linux</li>
-            <li><i class="skill-icon fab fa-windows"></i>Windows</li>
-          </ul>
-        </div>
-        
-        <div class="skill-category">
-          <h3><i class="fas fa-globe"></i> Web Development</h3>
-          <ul>
-            <li><i class="skill-icon fab fa-html5"></i>HTML</li>
-            <li><i class="skill-icon fab fa-css3-alt"></i>CSS</li>
-            <li><i class="skill-icon fab fa-js"></i>JavaScript</li>
-            <li><i class="skill-icon fab fa-php"></i>PHP</li>
-            <li><i class="skill-icon fab fa-flask"></i>Flask</li>
-          </ul>
-        </div>
-        
-        <div class="skill-category">
-          <h3><i class="fas fa-tasks"></i> Other Skills</h3>
-          <ul>
-            <li><i class="skill-icon far fa-file-word"></i>MS Office Suite</li>
-            <li><i class="skill-icon fas fa-chalkboard-teacher"></i>Technical Writing</li>
-            <li><i class="skill-icon fas fa-comments"></i>Scientific Communication</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="education">
-      <h2><i class="fas fa-graduation-cap section-icon"></i>Education</h2>
-      
-      <div class="education-item">
-        <p><i class="fas fa-university education-icon"></i><strong>School of Physics, Indian Institute of Science Education and Research, Thiruvananthapuram</strong></p>
-        <p><i class="fas fa-graduation-cap education-icon"></i>Master of Science </p>
-        <p><i class="far fa-calendar-alt education-icon"></i>Aug 2022 - June 2024</p>
-      </div>
-
-      <div class="education-item">
-        <p><i class="fas fa-university education-icon"></i><strong>Department of Physics, Ramakrishna Mission Vivekananda Centenary College, Rahara, Kolkata</strong></p>
-        <p><i class="fas fa-graduation-cap education-icon"></i>Bachelor of Science</p>
-        <p><i class="far fa-calendar-alt education-icon"></i>July 2019 - June 2022</p>
-      </div>
-
-      <div class="education-item">
-        <p><i class="fas fa-school education-icon"></i><strong>Science Stream, Egra J L High School, Egra, Purba Medinipur</strong></p>
-        <p><i class="fas fa-user-graduate education-icon"></i>Senior Secondary Education</p>
-        <p><i class="far fa-calendar-alt education-icon"></i>Jun 2017 - May 2019</p>
-      </div>
-
-      <div class="education-item">
-        <p><i class="fas fa-school education-icon"></i><strong>Basic Science Arts Language, Panchrol High School, Panchrol, Purba Medinipur</strong></p>
-        <p><i class="fas fa-user-graduate education-icon"></i>Secondary Education</p>
-        <p><i class="far fa-calendar-alt education-icon"></i>Jun 2015 - May 2017</p>
-      </div>
-    </section>
-
-    <section id="coursework">
-      <h2><i class="fas fa-book section-icon"></i>Coursework</h2>
-      <div class="coursework-grid">
-        <div class="course-category">
-          <h3><i class="fas fa-camera"></i> Imaging & Signal Processing</h3>
-          <ul>
-            <li>Principles of Digital Imaging</li>
-            <li>Digital Image Processing</li>
-          </ul>
-        </div>
-        <div class="course-category">
-          <h3><i class="fas fa-square-root-alt"></i> Mathematics & Computation</h3>
-          <ul>
-            <li>Mathematical Methods in Physics</li>
-            <li>Statistical and Data Analysis Methods</li>
-            <li>Numerical Methods</li>
-          </ul>
-        </div>
-        <div class="course-category">
-          <h3><i class="fas fa-atom"></i> Quantum Physics</h3>
-          <ul>
-            <li>Quantum Information Theory</li>
-            <li>Quantum Mechanics and Applications</li>
-          </ul>
-        </div>
-        <div class="course-category">
-          <h3><i class="fas fa-microchip"></i> Electronics & Systems</h3>
-          <ul>
-            <li>Analogue Systems and Applications</li>
-            <li>Digital Systems and Applications</li>
-          </ul>
-        </div>
-        <div class="course-category">
-          <h3><i class="fas fa-meteor"></i> Core Physics</h3>
-          <ul>
-            <li>Wave and Optics</li>
-            <li>Statistical Mechanics</li>
-            <li>Condensed Matter Physics</li>
-          </ul>
-        </div>
-        <div class="course-category">
-          <h3><i class="fas fa-comments"></i> Communication</h3>
-          <ul>
-            <li>English Communication</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2><i class="fas fa-project-diagram section-icon"></i>Projects</h2>
-      
-      <div class="project-item">
-        <h4><i class="fas fa-network-wired"></i> Fast Adaptive U-Net (FAU-Net): Novel Deep-Learning Network for Photoacoustic Imaging (PAI)</h4>
-        <p><strong><i class="fas fa-building"></i> BnBEng.LAB, IISER TVM</strong></p>
-        <p><strong><i class="fas fa-user-tie"></i> Supervisor:</strong> Dr. Mayanglambam Suheshkumar Singh, Associate Professor, IISER Thiruvananthapuram</p>
-        <p><strong><i class="fas fa-tasks"></i> Experiences:</strong></p>
-        <ul>
-          <li><i class="fas fa-laser"></i> Handling laser</li>
-          <li><i class="fas fa-camera"></i> Acquiring data from a home-built photoacoustic imaging setup</li>
-          <li><i class="fas fa-chart-line"></i> Analyzing raw transducer data</li>
-          <li><i class="fas fa-broadcast-tower"></i> Beamforming</li>
-          <li><i class="fas fa-cogs"></i> Processing data</li>
-          <li><i class="fas fa-code"></i> Applying reconstruction algorithms</li>
-          <li><i class="fas fa-brain"></i> Implementing deep learning techniques</li>
-        </ul>
-        <p><strong><i class="far fa-calendar-alt"></i> Duration:</strong> Jul 2023 – Jan 2024</p>
-      </div>
-      
-      <div class="project-item">
-        <h4><i class="fas fa-microscope"></i> Deep Learning-Powered Focus Stabilization in Light Sheet Microscopy</h4>
-        <p><strong><i class="fas fa-building"></i> BnBEng.LAB, IISER TVM</strong></p>
-        <p><strong><i class="fas fa-user-tie"></i> Supervisor:</strong> Dr. Mayanglambam Suheshkumar Singh, Associate Professor, IISER Thiruvananthapuram</p>
-        <p><strong><i class="fas fa-tasks"></i> Experiences:</strong></p>
-        <ul>
-          <li><i class="fas fa-camera"></i> Acquiring data from Light Sheet Microscopy</li>
-          <li><i class="fas fa-brain"></i> Implementing deep learning techniques</li>
-        </ul>
-        <p><strong><i class="far fa-calendar-alt"></i> Duration:</strong> Feb 2024 – Ongoing</p>
-      </div>
-    </section>
-
-    <section id="contacts">
-      <h2><i class="fas fa-address-book section-icon"></i>Contacts</h2>
-      <div class="contact-grid">
-        <div class="contact-item">
-          <i class="fas fa-envelope contact-icon"></i>
-          <h4>Email</h4>
-          <p>tathagatadasworkspace@gmail.com</p>
-        </div>
-        <div class="contact-item">
-          <i class="fab fa-linkedin contact-icon"></i>
-          <h4>LinkedIn</h4>
-          <p><a href="https://www.linkedin.com/in/tathagatalinked/" target="_blank">tathagatalinked</a></p>
-        </div>
-        <div class="contact-item">
-          <i class="fab fa-github contact-icon"></i>
-          <h4>GitHub</h4>
-          <p><a href="https://github.com/addressspace" target="_blank">addressspace</a></p>
-        </div>
-        <div class="contact-item">
-          <i class="fas fa-graduation-cap contact-icon"></i>
-          <h4>Google Scholar</h4>
-          <p><a href="https://scholar.google.com/citations?hl=en&user=rdoAiwkAAAAJ" target="_blank">View Profile</a></p>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- Research Projects Tab Content -->
-  <div id="researchprojects" class="tab-content">
-    <header>
-      <div class="container">
-        <h1>Research Projects</h1>
-        <h2>Tathagata Das</h2>
-      </div>
-    </header>
-
+  <section id="personal-info" class="justified-text">
     <div class="container">
-      <div class="table-of-contents">
-        <h3>Projects Overview</h3>
-        <ul>
-          <li><a href="#project1">Photoacoustic Imaging with Deep Learning</a></li>
-          <li><a href="#project2">Light Sheet Microscopy Focus Stabilization</a></li>
-          <li><a href="#project3">Optical Coherence Tomography Analysis</a></li>
-        </ul>
+      <div class="profile-container">
+        <img src="MSC22403.png" alt="Profile Picture" class="profile-img">
+        <div class="profile-glow"></div>
       </div>
-
-      <section id="project1" class="project">
-        <div class="project-header">
-          <h2>Photoacoustic Imaging with Deep Learning</h2>
-        </div>
-        <div class="project-content">
-          <div class="authors">
-            <p>Tathagata Das, Mayanglambam Suheshkumar Singh</p>
-          </div>
-          <div class="affiliations">
-            <p>BnBEng.LAB, School of Physics, Indian Institute of Science Education and Research, Thiruvananthapuram, Kerala, India</p>
-          </div>
-          
-          <div class="project-description">
-            <p>Photoacoustic imaging (PAI) is a hybrid imaging modality that combines the high contrast of optical imaging with the deep penetration capabilities of ultrasound. In this project, we developed a novel deep learning architecture called Fast Adaptive U-Net (FAU-Net) specifically designed for photoacoustic image reconstruction and enhancement.</p>
-            <p>The FAU-Net architecture incorporates adaptive features that allow it to adjust its parameters based on the input data characteristics, resulting in superior reconstruction quality compared to traditional methods and standard U-Net architectures.</p>
-          </div>
-          
-          <div class="publication-info">
-            <p><strong>Status:</strong> Manuscript in preparation</p>
-            <p><strong>Keywords:</strong> Photoacoustic Imaging, Deep Learning, Image Reconstruction, U-Net, Medical Imaging</p>
-          </div>
-          
-          <div class="figures-container">
-            <div class="figure-item">
-              <img src="Pai_images/Figure_2.jpg" alt="Photoacoustic Imaging Setup">
-              <div class="figure-caption">
-                <h3>Figure 1: Photoacoustic Imaging Setup</h3>
-                <p>Our custom-built photoacoustic imaging system consisting of a pulsed laser, ultrasound transducer array, and data acquisition system.</p>
-              </div>
-            </div>
-            <div class="figure-item">
-              <img src="Pai_images/Figure_3.jpg" alt="FAU-Net Architecture">
-              <div class="figure-caption">
-                <h3>Figure 2: FAU-Net Architecture</h3>
-                <p>The proposed Fast Adaptive U-Net architecture with adaptive feature selection modules and skip connections.</p>
-              </div>
-            </div>
-            <div class="figure-item">
-              <img src="Pai_images/Figure_4.jpg" alt="Reconstruction Results">
-              <div class="figure-caption">
-                <h3>Figure 3: Reconstruction Results</h3>
-                <p>Comparison of image reconstruction results using (a) Delay-and-Sum beamforming, (b) Standard U-Net, and (c) our proposed FAU-Net.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="project-divider"></div>
-
-      <section id="project2" class="project">
-        <div class="project-header">
-          <h2>Light Sheet Microscopy Focus Stabilization</h2>
-        </div>
-        <div class="project-content">
-          <div class="authors">
-            <p>Tathagata Das, Mayanglambam Suheshkumar Singh</p>
-          </div>
-          <div class="affiliations">
-            <p>BnBEng.LAB, School of Physics, Indian Institute of Science Education and Research, Thiruvananthapuram, Kerala, India</p>
-          </div>
-          
-          <div class="project-description">
-            <p>Light sheet fluorescence microscopy (LSFM) is a powerful imaging technique for 3D biological samples, offering reduced phototoxicity and fast acquisition speeds. However, maintaining optimal focus during long imaging sessions remains challenging due to sample drift, thermal fluctuations, and mechanical instabilities.</p>
-            <p>In this ongoing project, we are developing a deep learning-based approach for real-time focus detection and correction in light sheet microscopy. Our system uses a convolutional neural network to analyze image quality metrics and predict the optimal focus position, which is then used to adjust the microscope stage accordingly.</p>
-          </div>
-          
-          <div class="publication-info">
-            <p><strong>Status:</strong> Ongoing research</p>
-            <p><strong>Keywords:</strong> Light Sheet Microscopy, Deep Learning, Autofocus, Image Quality Assessment</p>
-          </div>
-          
-          <div class="figures-container">
-            <div class="figure-item">
-              <img src="lightsheetImages/figure1(a).png" alt="Light Sheet Microscopy Setup">
-              <div class="figure-caption">
-                <h3>Figure 1: Light Sheet Microscopy Setup</h3>
-                <p>Schematic diagram of our light sheet fluorescence microscopy system with the focus correction module.</p>
-              </div>
-            </div>
-            <div class="figure-item">
-              <img src="lightsheetImages/figure1(b).jpg" alt="Focus Quality Assessment">
-              <div class="figure-caption">
-                <h3>Figure 2: Focus Quality Assessment</h3>
-                <p>Examples of in-focus (left) and out-of-focus (right) images of fluorescent beads used for training our focus detection algorithm.</p>
-              </div>
-            </div>
-            <div class="figure-item">
-              <img src="lightsheetImages/figure3.png" alt="Focus Correction Results">
-              <div class="figure-caption">
-                <h3>Figure 3: Focus Correction Results</h3>
-                <p>Comparison of image quality metrics before and after applying our focus correction algorithm during a 2-hour time-lapse imaging experiment.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="project-divider"></div>
-
-      <section id="project3" class="project">
-        <div class="project-header">
-          <h2>Optical Coherence Tomography Analysis</h2>
-        </div>
-        <div class="project-content">
-          <div class="authors">
-            <p>Tathagata Das, Arijit Ghosh, Mayanglambam Suheshkumar Singh</p>
-          </div>
-          <div class="affiliations">
-            <p>BnBEng.LAB, School of Physics, Indian Institute of Science Education and Research, Thiruvananthapuram, Kerala, India</p>
-          </div>
-          
-          <div class="project-description">
-            <p>Optical Coherence Tomography (OCT) is a non-invasive imaging technique that provides high-resolution cross-sectional images of biological tissues. In this collaborative project, we focused on developing advanced image processing algorithms for OCT image enhancement and feature extraction.</p>
-            <p>Our work involved implementing noise reduction techniques specifically designed for speckle noise in OCT images, followed by automated segmentation of tissue layers using a combination of traditional image processing methods and machine learning approaches.</p>
-          </div>
-          
-          <div class="publication-info">
-            <p><strong>Status:</strong> Presented at SPIE Photonics West 2024</p>
-            <p><strong>Keywords:</strong> Optical Coherence Tomography, Image Processing, Segmentation, Speckle Noise Reduction</p>
-          </div>
-          
-          <div class="figures-container">
-            <div class="figure-item">
-              <img src="arijt_spie_poster/page1_img1.jpeg" alt="OCT System">
-              <div class="figure-caption">
-                <h3>Figure 1: OCT System</h3>
-                <p>Schematic representation of the spectral-domain OCT system used in our experiments.</p>
-              </div>
-            </div>
-            <div class="figure-item">
-              <img src="arijt_spie_poster/page1_img2.png" alt="Image Processing Pipeline">
-              <div class="figure-caption">
-                <h3>Figure 2: Image Processing Pipeline</h3>
-                <p>Overview of our OCT image processing pipeline, including preprocessing, noise reduction, and segmentation steps.</p>
-              </div>
-            </div>
-            <div class="figure-item">
-              <img src="arijt_spie_poster/page1_img3.jpeg" alt="Segmentation Results">
-              <div class="figure-caption">
-                <h3>Figure 3: Segmentation Results</h3>
-                <p>Comparison of retinal layer segmentation results using our proposed method (right) versus conventional approaches (left).</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="references">
-        <h3>References</h3>
-        <ol>
-          <li>Wang, L. V., & Hu, S. (2012). Photoacoustic tomography: in vivo imaging from organelles to organs. Science, 335(6075), 1458-1462.</li>
-          <li>Huisken, J., Swoger, J., Del Bene, F., Wittbrodt, J., & Stelzer, E. H. (2004). Optical sectioning deep inside live embryos by selective plane illumination microscopy. Science, 305(5686), 1007-1009.</li>
-          <li>Huang, D., Swanson, E. A., Lin, C. P., Schuman, J. S., Stinson, W. G., Chang, W., ... & Fujimoto, J. G. (1991). Optical coherence tomography. Science, 254(5035), 1178-1181.</li>
-        </ol>
+      <h2><i class="fas fa-user-circle section-icon"></i><a href="" target="_blank" style="color: inherit; text-decoration: none;">Tathagata Das</a></h2>
+      <div class="tagline">
+        <span class="highlight"><i class="fas fa-atom"></i> Physics</span> • 
+        <span class="highlight"><i class="fas fa-microscope"></i> Biomedical Imaging</span> • 
+        <span class="highlight"><i class="fas fa-search"></i> Research</span>
+      </div>
+      <div class="bio">
+        <p>I hold an MSc in Physics with a focus on biomedical imaging, having completed a significant project in this field. I am now seeking a PhD position to further my research and expertise in biomedical imaging.</p>
+      </div>
+      <div class="personal-social-icons">
+        <a href="https://www.linkedin.com/in/tathagatalinked/" target="_blank" class="personal-social-icon">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/addressspace" target="_blank" class="personal-social-icon">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:tathagatadasworkspace@gmail.com" class="personal-social-icon">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://scholar.google.com/citations?hl=en&user=rdoAiwkAAAAJ" target="_blank" class="personal-social-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </a>
       </div>
     </div>
+  </section>
 
-    <a href="#" class="back-to-top" id="back-to-top">
-      <i class="fas fa-arrow-up"></i>
-    </a>
-  </div>
+  <section id="research-interests" class="justified-text">
+    <h2><i class="fas fa-flask section-icon"></i>Research Interests</h2>
+    
+    <div class="interests-grid">
+      <div class="interest-item">
+        <h3><i class="fas fa-wave-square interest-icon"></i>Photoacoustic Tomography (PAT)</h3>
+        <div class="interest-bar"><div class="interest-fill" data-width="95%"></div></div>
+        <p class="interest-description">Advanced imaging technique combining optical excitation with ultrasonic detection for deep tissue imaging.</p>
+      </div>
+      <div class="interest-item">
+        <h3><i class="fas fa-broadcast-tower interest-icon"></i>Ultrasound Imaging</h3>
+        <div class="interest-bar"><div class="interest-fill" data-width="90%"></div></div>
+        <p class="interest-description">Non-invasive diagnostic imaging using high-frequency sound waves to visualize internal body structures.</p>
+      </div>
+      <div class="interest-item">
+        <h3><i class="fas fa-microscope interest-icon"></i>Photoacoustic Microscopy (PAM)</h3>
+        <div class="interest-bar"><div class="interest-fill" data-width="85%"></div></div>
+        <p class="interest-description">High-resolution optical absorption-based microscopic imaging for biological tissues.</p>
+      </div>
+      <div class="interest-item">
+        <h3><i class="fas fa-brain interest-icon"></i>Machine Learning/Deep Learning</h3>
+        <div class="interest-bar"><div class="interest-fill" data-width="85%"></div></div>
+        <p class="interest-description">Application of neural networks and AI algorithms to enhance medical image processing and analysis.</p>
+      </div>
+      <div class="interest-item">
+        <h3><i class="fas fa-x-ray interest-icon"></i>Medical Image Analysis</h3>
+        <div class="interest-bar"><div class="interest-fill" data-width="80%"></div></div>
+        <p class="interest-description">Computational techniques for extracting meaningful information from medical images.</p>
+      </div>
+      <div class="interest-item">
+        <h3><i class="fas fa-stethoscope interest-icon"></i>Medical Instrumentation</h3>
+        <div class="interest-bar"><div class="interest-fill" data-width="75%"></div></div>
+        <p class="interest-description">Design and development of specialized equipment for medical diagnostics and treatment.</p>
+      </div>
+      <div class="interest-item">
+        <h3><i class="fas fa-network-wired interest-icon"></i>Physics-Informed Neural Network</h3>
+        <div class="interest-bar"><div class="interest-fill" data-width="70%"></div></div>
+        <p class="interest-description">Neural networks that incorporate physical laws into their architecture for more accurate predictions.</p>
+      </div>
+      <div class="interest-item">
+        <h3><i class="fas fa-magnet interest-icon"></i>Magnetic Resonance Imaging (MRI)</h3>
+        <div class="interest-bar"><div class="interest-fill" data-width="65%"></div></div>
+        <p class="interest-description">Non-invasive imaging technique using magnetic fields and radio waves to visualize anatomical structures.</p>
+      </div>
+      <div class="interest-item">
+        <h3><i class="fas fa-cloud interest-icon"></i>Cloud Computing</h3>
+        <div class="interest-bar"><div class="interest-fill" data-width="60%"></div></div>
+        <p class="interest-description">Leveraging distributed computing resources for processing large medical imaging datasets.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2><i class="fas fa-tools section-icon"></i>Skills</h2>
+    
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3><i class="fas fa-microscope"></i> Research & Analysis</h3>
+        <ul>
+          <li><i class="skill-icon fas fa-wave-square"></i>Photoacoustic Imaging</li>
+          <li><i class="skill-icon fas fa-broadcast-tower"></i>Ultrasound Imaging</li>
+          <li><i class="skill-icon fas fa-chart-line"></i>Data Analysis</li>
+          <li><i class="skill-icon fas fa-cogs"></i>Signal Processing</li>
+          <li><i class="skill-icon fas fa-camera"></i>Image Processing</li>
+        </ul>
+      </div>
+      
+      <div class="skill-category">
+        <h3><i class="fas fa-code"></i> Programming</h3>
+        <ul>
+          <li><i class="skill-icon fab fa-python"></i>Python</li>
+          <li><i class="skill-icon fas fa-calculator"></i>MATLAB</li>
+          <li><i class="skill-icon fas fa-copyright"></i>C</li>
+        </ul>
+      </div>
+      
+      <div class="skill-category">
+        <h3><i class="fas fa-brain"></i> Machine Learning</h3>
+        <ul>
+          <li><i class="skill-icon fab fa-python"></i>PyTorch</li>
+          <li><i class="skill-icon fas fa-network-wired"></i>Neural Networks</li>
+          <li><i class="skill-icon fas fa-project-diagram"></i>Deep Learning</li>
+        </ul>
+      </div>
+      
+      <div class="skill-category">
+        <h3><i class="fas fa-laptop-code"></i> Tools & Systems</h3>
+        <ul>
+          <li><i class="skill-icon fas fa-wave-square"></i>k-Wave MATLAB toolbox</li>
+          <li><i class="skill-icon fas fa-server"></i>HPC</li>
+          <li><i class="skill-icon fas fa-cloud"></i>Cloud Computing</li>
+          <li><i class="skill-icon fab fa-linux"></i>Linux</li>
+          <li><i class="skill-icon fab fa-windows"></i>Windows</li>
+        </ul>
+      </div>
+      
+      <div class="skill-category">
+        <h3><i class="fas fa-globe"></i> Web Development</h3>
+        <ul>
+          <li><i class="skill-icon fab fa-html5"></i>HTML</li>
+          <li><i class="skill-icon fab fa-css3-alt"></i>CSS</li>
+          <li><i class="skill-icon fab fa-js"></i>JavaScript</li>
+          <li><i class="skill-icon fab fa-php"></i>PHP</li>
+          <li><i class="skill-icon fab fa-flask"></i>Flask</li>
+        </ul>
+      </div>
+      
+      <div class="skill-category">
+        <h3><i class="fas fa-tasks"></i> Other Skills</h3>
+        <ul>
+          <li><i class="skill-icon far fa-file-word"></i>MS Office Suite</li>
+          <li><i class="skill-icon fas fa-chalkboard-teacher"></i>Technical Writing</li>
+          <li><i class="skill-icon fas fa-comments"></i>Scientific Communication</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2><i class="fas fa-graduation-cap section-icon"></i>Education</h2>
+    
+    <div class="education-item">
+      <p><i class="fas fa-university education-icon"></i><strong>School of Physics, Indian Institute of Science Education and Research, Thiruvananthapuram</strong></p>
+      <p><i class="fas fa-graduation-cap education-icon"></i>Master of Science </p>
+      <p><i class="far fa-calendar-alt education-icon"></i>Aug 2022 - June 2024</p>
+    </div>
+
+    <div class="education-item">
+      <p><i class="fas fa-university education-icon"></i><strong>Department of Physics, Ramakrishna Mission Vivekananda Centenary College, Rahara, Kolkata</strong></p>
+      <p><i class="fas fa-graduation-cap education-icon"></i>Bachelor of Science</p>
+      <p><i class="far fa-calendar-alt education-icon"></i>July 2019 - June 2022</p>
+    </div>
+
+    <div class="education-item">
+      <p><i class="fas fa-school education-icon"></i><strong>Science Stream, Egra J L High School, Egra, Purba Medinipur</strong></p>
+      <p><i class="fas fa-user-graduate education-icon"></i>Senior Secondary Education</p>
+      <p><i class="far fa-calendar-alt education-icon"></i>Jun 2017 - May 2019</p>
+    </div>
+
+    <div class="education-item">
+      <p><i class="fas fa-school education-icon"></i><strong>Basic Science Arts Language, Panchrol High School, Panchrol, Purba Medinipur</strong></p>
+      <p><i class="fas fa-user-graduate education-icon"></i>Secondary Education</p>
+      <p><i class="far fa-calendar-alt education-icon"></i>Jun 2015 - May 2017</p>
+    </div>
+  </section>
+
+  <section id="coursework">
+    <h2><i class="fas fa-book section-icon"></i>Coursework</h2>
+    <div class="coursework-grid">
+      <div class="course-category">
+        <h3><i class="fas fa-camera"></i> Imaging & Signal Processing</h3>
+        <ul>
+          <li>Principles of Digital Imaging</li>
+          <li>Digital Image Processing</li>
+        </ul>
+      </div>
+      <div class="course-category">
+        <h3><i class="fas fa-square-root-alt"></i> Mathematics & Computation</h3>
+        <ul>
+          <li>Mathematical Methods in Physics</li>
+          <li>Statistical and Data Analysis Methods</li>
+          <li>Numerical Methods</li>
+        </ul>
+      </div>
+      <div class="course-category">
+        <h3><i class="fas fa-atom"></i> Quantum Physics</h3>
+        <ul>
+          <li>Quantum Information Theory</li>
+          <li>Quantum Mechanics and Applications</li>
+        </ul>
+      </div>
+      <div class="course-category">
+        <h3><i class="fas fa-microchip"></i> Electronics & Systems</h3>
+        <ul>
+          <li>Analogue Systems and Applications</li>
+          <li>Digital Systems and Applications</li>
+        </ul>
+      </div>
+      <div class="course-category">
+        <h3><i class="fas fa-meteor"></i> Core Physics</h3>
+        <ul>
+          <li>Wave and Optics</li>
+          <li>Statistical Mechanics</li>
+          <li>Condensed Matter Physics</li>
+        </ul>
+      </div>
+      <div class="course-category">
+        <h3><i class="fas fa-comments"></i> Communication</h3>
+        <ul>
+          <li>English Communication</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2><i class="fas fa-project-diagram section-icon"></i>Projects</h2>
+    
+    <div class="project-item">
+      <h4><i class="fas fa-network-wired"></i> Fast Adaptive U-Net (FAU-Net): Novel Deep-Learning Network for Photoacoustic Imaging (PAI)</h4>
+      <p><strong><i class="fas fa-building"></i> BnBEng.LAB, IISER TVM</strong></p>
+      <p><strong><i class="fas fa-user-tie"></i> Supervisor:</strong> Dr. Mayanglambam Suheshkumar Singh, Associate Professor, IISER Thiruvananthapuram</p>
+      <p><strong><i class="fas fa-tasks"></i> Experiences:</strong></p>
+      <ul>
+        <li><i class="fas fa-laser"></i> Handling laser</li>
+        <li><i class="fas fa-camera"></i> Acquiring data from a home-built photoacoustic imaging setup</li>
+        <li><i class="fas fa-chart-line"></i> Analyzing raw transducer data</li>
+        <li><i class="fas fa-broadcast-tower"></i> Beamforming</li>
+        <li><i class="fas fa-cogs"></i> Processing data</li>
+        <li><i class="fas fa-code"></i> Applying reconstruction algorithms</li>
+        <li><i class="fas fa-brain"></i> Implementing deep learning techniques</li>
+      </ul>
+      <p><strong><i class="far fa-calendar-alt"></i> Duration:</strong> Jul 2023 – Jan 2024</p>
+      <p><a href="researchProject.html#project1" class="highlight"><i class="fas fa-external-link-alt"></i> View Project Details</a></p>
+    </div>
+    
+    <div class="project-item">
+      <h4><i class="fas fa-microscope"></i> Deep Learning-Powered Focus Stabilization in Light Sheet Microscopy</h4>
+      <p><strong><i class="fas fa-building"></i> BnBEng.LAB, IISER TVM</strong></p>
+      <p><strong><i class="fas fa-user-tie"></i> Supervisor:</strong> Dr. Mayanglambam Suheshkumar Singh, Associate Professor, IISER Thiruvananthapuram</p>
+      <p><strong><i class="fas fa-tasks"></i> Experiences:</strong></p>
+      <ul>
+        <li><i class="fas fa-camera"></i> Acquiring data from Light Sheet Microscopy</li>
+        <li><i class="fas fa-brain"></i> Implementing deep learning techniques</li>
+      </ul>
+      <p><strong><i class="far fa-calendar-alt"></i> Duration:</strong> Feb 2024 – Ongoing</p>
+      <p><a href="researchProject.html#project2" class="highlight"><i class="fas fa-external-link-alt"></i> View Project Details</a></p>
+    </div>
+    
+    <div class="project-item">
+      <h4><i class="fas fa-file-medical-alt"></i> Deep Learning-Based Photoacoustic Image Reconstruction Using PMUT</h4>
+      <p><strong><i class="fas fa-building"></i> BnBEng.LAB, IISER TVM</strong></p>
+      <p><strong><i class="fas fa-user-tie"></i> Collaborator:</strong> Arijit Paramanick, IISER Thiruvananthapuram</p>
+      <p><strong><i class="fas fa-tasks"></i> Experiences:</strong></p>
+      <ul>
+        <li><i class="fas fa-brain"></i> Deep learning model development</li>
+        <li><i class="fas fa-chart-line"></i> Data analysis and processing</li>
+        <li><i class="fas fa-microscope"></i> Ex-vivo sample preparation</li>
+      </ul>
+      <p><strong><i class="far fa-calendar-alt"></i> Duration:</strong> Jan 2024 – May 2024</p>
+      <p><a href="researchProject.html#project3" class="highlight"><i class="fas fa-external-link-alt"></i> View Project Details</a></p>
+    </div>
+    
+    <div style="text-align: center; margin-top: 30px;">
+      <a href="researchProject.html" class="highlight projects-link" style="font-size: 1.1em; padding: 10px 15px; border: 1px solid var(--accent-color); border-radius: 5px; display: inline-block; transition: all 0.3s ease; background-color: var(--item-bg); box-shadow: 0 4px 12px var(--shadow-color);">
+        <i class="fas fa-flask"></i> View All Research Projects
+      </a>
+    </div>
+  </section>
+
+  <section id="contacts">
+    <h2><i class="fas fa-address-book section-icon"></i>Contacts</h2>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <i class="fas fa-envelope contact-icon"></i>
+        <h4>Email</h4>
+        <p>tathagatadasworkspace@gmail.com</p>
+      </div>
+      <div class="contact-item">
+        <i class="fab fa-linkedin contact-icon"></i>
+        <h4>LinkedIn</h4>
+        <p><a href="https://www.linkedin.com/in/tathagatalinked/" target="_blank">tathagatalinked</a></p>
+      </div>
+      <div class="contact-item">
+        <i class="fab fa-github contact-icon"></i>
+        <h4>GitHub</h4>
+        <p><a href="https://github.com/addressspace" target="_blank">addressspace</a></p>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-graduation-cap contact-icon"></i>
+        <h4>Google Scholar</h4>
+        <p><a href="https://scholar.google.com/citations?hl=en&user=rdoAiwkAAAAJ" target="_blank">View Profile</a></p>
+      </div>
+    </div>
+  </section>
 
   <footer>
     <div class="footer-content">
@@ -1655,7 +1232,7 @@
 
   <script>
     function toggleMenu() {
-      const navLinks = document.querySelector('.nav-links');
+      const navLinks = document.getElementById('navLinks');
       const menuIcon = document.querySelector('.menu-icon');
       navLinks.classList.toggle('active');
       menuIcon.classList.toggle('active');
@@ -1663,7 +1240,7 @@
     
     // Close menu when clicking outside
     document.addEventListener('click', function(event) {
-      const navLinks = document.querySelector('.nav-links');
+      const navLinks = document.getElementById('navLinks');
       const menuIcon = document.querySelector('.menu-icon');
       
       if (navLinks.classList.contains('active') && 
@@ -1692,93 +1269,74 @@
     });
     
     // Theme toggle functionality
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = themeToggle.querySelector('i');
+    const themeToggle = document.getElementById('theme-toggle-input');
     
-    // Check if user has a saved preference
+    // Check for saved theme preference or use default (light)
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
       document.body.classList.add('dark-theme');
-      themeIcon.classList.replace('fa-moon', 'fa-sun');
+      themeToggle.checked = true;
     }
     
-    themeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-theme');
-      
-      if (document.body.classList.contains('dark-theme')) {
-        themeIcon.classList.replace('fa-moon', 'fa-sun');
+    // Toggle theme when switch is clicked
+    themeToggle.addEventListener('change', function() {
+      if (this.checked) {
+        document.body.classList.add('dark-theme');
         localStorage.setItem('theme', 'dark');
       } else {
-        themeIcon.classList.replace('fa-sun', 'fa-moon');
+        document.body.classList.remove('dark-theme');
         localStorage.setItem('theme', 'light');
       }
     });
     
-    // Tab functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const tabButtons = document.querySelectorAll('.tab-button');
-      const tabContents = document.querySelectorAll('.tab-content');
-      const homeLink = document.getElementById('home-link');
-      
-      // Function to show a specific tab
-      function showTab(tabId) {
-        // Hide all tabs
-        tabContents.forEach(tab => {
-          tab.classList.remove('active');
-        });
+    // Add scroll reveal effects
+    window.addEventListener('scroll', function() {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
         
-        // Remove active class from all buttons
-        tabButtons.forEach(button => {
-          button.classList.remove('active');
-        });
-        
-        // Show the selected tab
-        document.getElementById(tabId).classList.add('active');
-        
-        // Add active class to the clicked button
-        document.querySelector(`.tab-button[data-tab="${tabId}"]`).classList.add('active');
-        
-        // Update URL without page reload
-        history.pushState(null, null, `#${tabId}`);
-      }
-      
-      // Add click event to tab buttons
-      tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          const tabId = button.getAttribute('data-tab');
-          showTab(tabId);
-        });
-      });
-      
-      // Home link should show personal details tab
-      homeLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        showTab('personaldetails');
-      });
-      
-      // Check URL hash on page load
-      const hash = window.location.hash.substring(1);
-      if (hash === 'researchprojects' || hash === 'personaldetails') {
-        showTab(hash);
-      }
-    });
-
-    // Back to top button functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const backToTopButton = document.getElementById('back-to-top');
-      
-      window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-          backToTopButton.classList.add('visible');
-        } else {
-          backToTopButton.classList.remove('visible');
+        if (sectionTop < windowHeight * 0.75) {
+          section.style.opacity = '1';
+          section.style.transform = 'translateY(0)';
+          
+          // Animate interest bars if this is the research interests section
+          if (section.id === 'research-interests') {
+            const interestFills = section.querySelectorAll('.interest-fill');
+            interestFills.forEach(fill => {
+              // Reset to 0 width
+              fill.style.width = '0';
+              
+              // Force reflow to ensure animation works
+              void fill.offsetWidth;
+              
+              // Animate to target width
+              const targetWidth = fill.getAttribute('data-width');
+              fill.style.transition = 'width 1.5s ease-in-out';
+              fill.style.width = targetWidth;
+            });
+          }
         }
       });
-      
-      backToTopButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    
+    // Initialize sections with opacity 0
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(20px)';
+        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       });
+      
+      // Set initial width for interest bars to 0
+      const interestFills = document.querySelectorAll('.interest-fill');
+      interestFills.forEach(fill => {
+        fill.style.width = '0';
+      });
+      
+      // Trigger scroll event to reveal visible sections
+      window.dispatchEvent(new Event('scroll'));
     });
   </script>
 
